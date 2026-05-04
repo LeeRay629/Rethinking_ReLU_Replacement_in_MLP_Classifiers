@@ -1,0 +1,114 @@
+# ==============================================================================
+# Quad4FHE repository .gitignore
+# This version keeps bundled raw datasets, quad4fhe-*.tar.gz, and
+# FHE_CKKS/thirdparty/SEAL-4.1-bs/ source files, because these are intentionally
+# retained for reproducibility.
+# ==============================================================================
+
+# OS / editor / notebook noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+
+# Python environments and package build outputs
+.venv/
+venv/
+env/
+.env
+.env.*
+*.egg-info/
+dist/
+site/
+htmlcov/
+.coverage
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# CMake / C++ build products
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+
+# Keep thirdparty/SEAL-4.1-bs source, but ignore its local build/install outputs.
+FHE_CKKS/thirdparty/SEAL-4.1-bs/build/
+FHE_CKKS/thirdparty/SEAL-4.1-bs/install/
+Quad4FHE_Code/FHE_CKKS/thirdparty/SEAL-4.1-bs/build/
+Quad4FHE_Code/FHE_CKKS/thirdparty/SEAL-4.1-bs/install/
+
+# Optional large nonessential SEAL sub-build artifacts, if generated.
+FHE_CKKS/thirdparty/SEAL-4.1-bs/**/build/
+Quad4FHE_Code/FHE_CKKS/thirdparty/SEAL-4.1-bs/**/build/
+
+# CKKS / HE artifacts, exported tensors, logits, and binary arrays.
+# The plaintext notebooks can regenerate these. For CKKS reproduction, copy the
+# needed artifact directories into FHE_CKKS manually or provide them via release.
+he_artifacts*/
+**/he_artifacts*/
+**/*.bin
+**/W1.bin
+**/W2.bin
+**/b1.bin
+**/b2.bin
+**/X_test.bin
+**/y_test_true.bin
+**/y_test_relu.bin
+**/relu_logits_test.bin
+**/he_logits_*.bin
+**/logits_*.bin
+**/coeffs_*.bin
+**/meta.txt
+
+# Logs, temporary outputs, and sanitizer backups
+logs/
+*.log
+*_outputs.log
+*_result.txt
+*.json.bak
+*.tmp
+
+# Local feature/model caches and checkpoints.
+# Do not ignore *.csv globally because some bundled raw datasets and result
+# summaries are intentionally kept.
+cache/
+.cache/
+huggingface/
+transformers_cache/
+checkpoints/
+models/
+model_cache/
+*.npz
+*.npy
+*.pkl
+*.pickle
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Secrets and credentials
+*.key
+*.pem
+*.crt
+*.p12
+secrets.json
+token.json
+credentials.json

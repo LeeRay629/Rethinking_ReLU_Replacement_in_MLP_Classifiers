@@ -1,0 +1,3983 @@
+{
+  "dataset": "SST5",
+  "experiment": "smallpool",
+  "created_at": "2026-05-03T16:21:05",
+  "source_notebook": "SST5_smallpool_autosave.ipynb",
+  "log_file": "../results/SST5/smallpool/SST5_smallpool_result.txt",
+  "seed": 2026,
+  "dataset_info": {
+    "calib_n_first": 59,
+    "test_n": 2210,
+    "num_classes": 5,
+    "input_dim": 200
+  },
+  "config": {
+    "SEED": 2026,
+    "HIDDEN_DIM": 256,
+    "EPOCHS": 200,
+    "LR": 0.001,
+    "BATCH_SIZE": 512,
+    "WEIGHT_DECAY": 1e-05,
+    "POOL_SIZES_TO_COMPARE": [
+      0.01,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "REPLACEMENT_SELECTION_FRACTION": 0.5,
+    "MIN_POOL_SAMPLES": 30,
+    "MIN_SAMPLES_PER_CLASS": 2,
+    "NUM_CLASSES": 5,
+    "SVD_COMPONENTS": 200,
+    "TFIDF_MAX_FEATURES": 10000,
+    "TFIDF_NGRAM_RANGE": [
+      1,
+      2
+    ],
+    "BASELINES": [
+      "square",
+      "ls_poly_2",
+      "ls_poly_3",
+      "ls_poly_5",
+      "ls_poly_7",
+      "remez_2",
+      "remez_3",
+      "remez_5",
+      "remez_7",
+      "ola",
+      "precise_a11"
+    ]
+  },
+  "runs": [
+    {
+      "key": "pool=01%",
+      "hidden_dim": 256,
+      "pool_fraction": 0.01,
+      "rep_fit_size": 59,
+      "original": {
+        "test_top1_acc": 0.34705882352941175,
+        "test_top5_acc": null
+      },
+      "quad4fhe": {
+        "alpha": 0.13497330148377257,
+        "beta": 0.304777676641093,
+        "eta": 0.09965855893646841,
+        "threshold": null,
+        "zero_threshold_realized": null,
+        "method_used": "soft(C=100.0)",
+        "hard_feasible": false,
+        "empirical_margin": -0.8625029720855055,
+        "normalized_margin": -0.05737859322505843,
+        "quant_decimals": 0,
+        "constraint_version": "multiclass_bias_free_dL_v1",
+        "he_artifact_dir": "he_artifacts_sst5_pool_01",
+        "calib_n": 59,
+        "calib_agreement": 0.8813559322033898,
+        "calib_mismatch_count": 7,
+        "exact_preserved_on_calib": false,
+        "test_n": 2210,
+        "test_agreement": 0.9190045248868778,
+        "test_mismatch_count": 179,
+        "calib_test_agreement_gap": -0.03764859268348797,
+        "test_top1_acc": 0.3429864253393665,
+        "test_top5_acc": null,
+        "test_macro_f1": 0.28585297394285625,
+        "solver_diagnostics": {
+          "num_pairwise_constraints": 236,
+          "min_pairwise_margin": -0.8625029720855055,
+          "normalized_min_pairwise_margin": -0.05737859322505843,
+          "calib_agreement": 0.8813559322033898,
+          "calib_mismatch_count": 7,
+          "exact_preserved": false,
+          "slack_positive_count": 15,
+          "sum_slack": 13.766071562582766,
+          "mean_slack": 0.23332324682343672,
+          "max_slack": 1.8625029720855055,
+          "pairwise_slack_positive_count": 17,
+          "pairwise_sum_slack": 15.296040682338816,
+          "pairwise_max_slack": 1.8625029720855055,
+          "soft_C_grid": [
+            0.001,
+            0.01,
+            0.1,
+            1.0,
+            10.0,
+            100.0
+          ],
+          "selected_C": 100.0,
+          "soft_trace": [
+            {
+              "C": 0.001,
+              "objective": 0.558675048061692,
+              "calib_agreement": 0.6610169491525424,
+              "calib_mismatch_count": 20,
+              "min_pairwise_margin": -0.07656385277634048,
+              "sum_slack": 56.93485318814291,
+              "max_slack": 1.0765638527763404,
+              "slack_positive_count": 59
+            },
+            {
+              "C": 0.01,
+              "objective": 0.9934966973032403,
+              "calib_agreement": 0.8813559322033898,
+              "calib_mismatch_count": 7,
+              "min_pairwise_margin": -0.12404115434067109,
+              "sum_slack": 42.27290991260195,
+              "max_slack": 1.124041154340671,
+              "slack_positive_count": 57
+            },
+            {
+              "C": 0.1,
+              "objective": 3.8762172423038788,
+              "calib_agreement": 0.8813559322033898,
+              "calib_mismatch_count": 7,
+              "min_pairwise_margin": -0.2708165280969214,
+              "sum_slack": 28.550172915290073,
+              "max_slack": 1.2708165280969215,
+              "slack_positive_count": 40
+            },
+            {
+              "C": 1.0,
+              "objective": 24.281074614099055,
+              "calib_agreement": 0.864406779661017,
+              "calib_mismatch_count": 8,
+              "min_pairwise_margin": -0.6413375672788086,
+              "sum_slack": 20.971955380772254,
+              "max_slack": 1.6413375672788086,
+              "slack_positive_count": 27
+            },
+            {
+              "C": 10.0,
+              "objective": 181.35936798717418,
+              "calib_agreement": 0.8813559322033898,
+              "calib_mismatch_count": 7,
+              "min_pairwise_margin": -0.7012527617120905,
+              "sum_slack": 16.086772767395264,
+              "max_slack": 1.7012527617120905,
+              "slack_positive_count": 20
+            },
+            {
+              "C": 100.0,
+              "objective": 1489.5845137166486,
+              "calib_agreement": 0.8813559322033898,
+              "calib_mismatch_count": 7,
+              "min_pairwise_margin": -0.8625029720855055,
+              "sum_slack": 13.766071562582766,
+              "max_slack": 1.8625029720855055,
+              "slack_positive_count": 15
+            }
+          ],
+          "regime": "soft(C=100.0)",
+          "constraint_version": "multiclass_bias_free_dL_v1",
+          "fit_exact_preserved": false,
+          "fit_mismatch_count": 7,
+          "fit_agreement": 0.8813559322033898
+        },
+        "num_pairwise_constraints": 236,
+        "min_pairwise_margin": -0.8625029720855055,
+        "normalized_min_pairwise_margin": -0.05737859322505843,
+        "slack_positive_count": 15,
+        "sum_slack": 13.766071562582766,
+        "mean_slack": 0.23332324682343672,
+        "max_slack": 1.8625029720855055,
+        "pairwise_slack_positive_count": 17,
+        "pairwise_sum_slack": 15.296040682338816,
+        "pairwise_mean_slack": null,
+        "pairwise_max_slack": 1.8625029720855055,
+        "selected_C": 100.0,
+        "soft_C_grid": [
+          0.001,
+          0.01,
+          0.1,
+          1.0,
+          10.0,
+          100.0
+        ],
+        "soft_trace": [
+          {
+            "C": 0.001,
+            "objective": 0.558675048061692,
+            "calib_agreement": 0.6610169491525424,
+            "calib_mismatch_count": 20,
+            "min_pairwise_margin": -0.07656385277634048,
+            "sum_slack": 56.93485318814291,
+            "max_slack": 1.0765638527763404,
+            "slack_positive_count": 59
+          },
+          {
+            "C": 0.01,
+            "objective": 0.9934966973032403,
+            "calib_agreement": 0.8813559322033898,
+            "calib_mismatch_count": 7,
+            "min_pairwise_margin": -0.12404115434067109,
+            "sum_slack": 42.27290991260195,
+            "max_slack": 1.124041154340671,
+            "slack_positive_count": 57
+          },
+          {
+            "C": 0.1,
+            "objective": 3.8762172423038788,
+            "calib_agreement": 0.8813559322033898,
+            "calib_mismatch_count": 7,
+            "min_pairwise_margin": -0.2708165280969214,
+            "sum_slack": 28.550172915290073,
+            "max_slack": 1.2708165280969215,
+            "slack_positive_count": 40
+          },
+          {
+            "C": 1.0,
+            "objective": 24.281074614099055,
+            "calib_agreement": 0.864406779661017,
+            "calib_mismatch_count": 8,
+            "min_pairwise_margin": -0.6413375672788086,
+            "sum_slack": 20.971955380772254,
+            "max_slack": 1.6413375672788086,
+            "slack_positive_count": 27
+          },
+          {
+            "C": 10.0,
+            "objective": 181.35936798717418,
+            "calib_agreement": 0.8813559322033898,
+            "calib_mismatch_count": 7,
+            "min_pairwise_margin": -0.7012527617120905,
+            "sum_slack": 16.086772767395264,
+            "max_slack": 1.7012527617120905,
+            "slack_positive_count": 20
+          },
+          {
+            "C": 100.0,
+            "objective": 1489.5845137166486,
+            "calib_agreement": 0.8813559322033898,
+            "calib_mismatch_count": 7,
+            "min_pairwise_margin": -0.8625029720855055,
+            "sum_slack": 13.766071562582766,
+            "max_slack": 1.8625029720855055,
+            "slack_positive_count": 15
+          }
+        ],
+        "selected_mu": null,
+        "mu_grid": null,
+        "mu_p": null,
+        "mu_n": null
+      },
+      "report_vs_ground_truth_test": {
+        "Original": {
+          "ACC": 0.34705882352941175,
+          "MacroF1": 0.2975988552473062,
+          "MacroPrec": 0.3367820188901291,
+          "MacroRec": 0.3043198815866276,
+          "AUC_ovr": 0.6595925928831745,
+          "Agreement": 1.0
+        },
+        "Quad4FHE": {
+          "ACC": 0.3429864253393665,
+          "MacroF1": 0.28585297394285625,
+          "MacroPrec": 0.3268693100962575,
+          "MacroRec": 0.2968163988536009,
+          "AUC_ovr": 0.659817436361566,
+          "Agreement": 0.9190045248868778
+        },
+        "square": {
+          "ACC": 0.2737556561085973,
+          "MacroF1": 0.2040155016071267,
+          "MacroPrec": 0.2593664027730015,
+          "MacroRec": 0.22792235079292422,
+          "AUC_ovr": 0.5662748935101186,
+          "Agreement": 0.5416289592760181
+        },
+        "ls_poly_2": {
+          "ACC": 0.3506787330316742,
+          "MacroF1": 0.2516929029908728,
+          "MacroPrec": 0.3819150228949725,
+          "MacroRec": 0.2892617726531409,
+          "AUC_ovr": 0.6634379450268064,
+          "Agreement": 0.7963800904977375
+        },
+        "ls_poly_3": {
+          "ACC": 0.34932126696832577,
+          "MacroF1": 0.26232198092420206,
+          "MacroPrec": 0.35626761573341764,
+          "MacroRec": 0.2919018953031642,
+          "AUC_ovr": 0.6639135739418838,
+          "Agreement": 0.8199095022624434
+        },
+        "ls_poly_5": {
+          "ACC": 0.351131221719457,
+          "MacroF1": 0.2830543930392137,
+          "MacroPrec": 0.34059559572434106,
+          "MacroRec": 0.3001037972373374,
+          "AUC_ovr": 0.6634185596726059,
+          "Agreement": 0.8941176470588236
+        },
+        "ls_poly_7": {
+          "ACC": 0.34886877828054297,
+          "MacroF1": 0.2896477604406503,
+          "MacroPrec": 0.3366062079023412,
+          "MacroRec": 0.30184573616300725,
+          "AUC_ovr": 0.6614473058730692,
+          "Agreement": 0.9248868778280543
+        },
+        "remez_2": {
+          "ACC": 0.351131221719457,
+          "MacroF1": 0.2757160193503599,
+          "MacroPrec": 0.3514471248446948,
+          "MacroRec": 0.29745722888078324,
+          "AUC_ovr": 0.6642217990461922,
+          "Agreement": 0.8457013574660633
+        },
+        "remez_3": {
+          "ACC": 0.34705882352941175,
+          "MacroF1": 0.2782699658707687,
+          "MacroPrec": 0.3342899244406997,
+          "MacroRec": 0.2963454811817151,
+          "AUC_ovr": 0.6640564975256587,
+          "Agreement": 0.8619909502262444
+        },
+        "remez_5": {
+          "ACC": 0.34705882352941175,
+          "MacroF1": 0.29563917798294187,
+          "MacroPrec": 0.330080637601737,
+          "MacroRec": 0.3041594922973546,
+          "AUC_ovr": 0.6625264661643807,
+          "Agreement": 0.9235294117647059
+        },
+        "remez_7": {
+          "ACC": 0.34841628959276016,
+          "MacroF1": 0.30434721724539,
+          "MacroPrec": 0.3390826400928383,
+          "MacroRec": 0.30884873988927425,
+          "AUC_ovr": 0.6601629662859338,
+          "Agreement": 0.9384615384615385
+        },
+        "ola": {
+          "ACC": 0.34524886877828054,
+          "MacroF1": 0.29844367194537724,
+          "MacroPrec": 0.3334675271901922,
+          "MacroRec": 0.3044942062321728,
+          "AUC_ovr": 0.6545999075641467,
+          "Agreement": 0.969683257918552
+        },
+        "precise_a11": {
+          "ACC": 0.34705882352941175,
+          "MacroF1": 0.2976088916012694,
+          "MacroPrec": 0.3366350059561445,
+          "MacroRec": 0.3043198815866276,
+          "AUC_ovr": 0.6596009000422851,
+          "Agreement": 0.9995475113122172
+        }
+      },
+      "report_vs_pseudo_labels_test": {
+        "Original": {
+          "ACC": 1.0,
+          "MacroF1": 1.0,
+          "MacroPrec": 1.0,
+          "MacroRec": 1.0,
+          "AUC_ovr": 0.9686247815073761,
+          "Agreement": 1.0
+        },
+        "Quad4FHE": {
+          "ACC": 0.9190045248868778,
+          "MacroF1": 0.8875793451798618,
+          "MacroPrec": 0.9054889097312024,
+          "MacroRec": 0.87473977518876,
+          "AUC_ovr": 0.9541818035849673,
+          "Agreement": 0.9190045248868778
+        },
+        "square": {
+          "ACC": 0.5416289592760181,
+          "MacroF1": 0.40413138143137656,
+          "MacroPrec": 0.4854907877756725,
+          "MacroRec": 0.3961047041244058,
+          "AUC_ovr": 0.7306013419161289,
+          "Agreement": 0.5416289592760181
+        },
+        "ls_poly_2": {
+          "ACC": 0.7963800904977375,
+          "MacroF1": 0.6550832759062774,
+          "MacroPrec": 0.8842217466948579,
+          "MacroRec": 0.5959279303714018,
+          "AUC_ovr": 0.9602931729641536,
+          "Agreement": 0.7963800904977375
+        },
+        "ls_poly_3": {
+          "ACC": 0.8199095022624434,
+          "MacroF1": 0.7170026607015655,
+          "MacroPrec": 0.8696425031258943,
+          "MacroRec": 0.6572879782714266,
+          "AUC_ovr": 0.9623883340315686,
+          "Agreement": 0.8199095022624434
+        },
+        "ls_poly_5": {
+          "ACC": 0.8941176470588236,
+          "MacroF1": 0.851270802252493,
+          "MacroPrec": 0.9141256934869368,
+          "MacroRec": 0.8088484630493384,
+          "AUC_ovr": 0.9661345783666893,
+          "Agreement": 0.8941176470588236
+        },
+        "ls_poly_7": {
+          "ACC": 0.9248868778280543,
+          "MacroF1": 0.9002273289001936,
+          "MacroPrec": 0.9294990673198169,
+          "MacroRec": 0.8760931653215558,
+          "AUC_ovr": 0.9670647429654675,
+          "Agreement": 0.9248868778280543
+        },
+        "remez_2": {
+          "ACC": 0.8457013574660633,
+          "MacroF1": 0.7744874914107703,
+          "MacroPrec": 0.8747961206949029,
+          "MacroRec": 0.721628557650277,
+          "AUC_ovr": 0.9603837040244485,
+          "Agreement": 0.8457013574660633
+        },
+        "remez_3": {
+          "ACC": 0.8619909502262444,
+          "MacroF1": 0.8137544535112197,
+          "MacroPrec": 0.8759015210836392,
+          "MacroRec": 0.7725926232892389,
+          "AUC_ovr": 0.9618579923793551,
+          "Agreement": 0.8619909502262444
+        },
+        "remez_5": {
+          "ACC": 0.9235294117647059,
+          "MacroF1": 0.9017420980779403,
+          "MacroPrec": 0.8990570306733134,
+          "MacroRec": 0.9059968501510054,
+          "AUC_ovr": 0.9656832078759132,
+          "Agreement": 0.9235294117647059
+        },
+        "remez_7": {
+          "ACC": 0.9384615384615385,
+          "MacroF1": 0.9183034481838964,
+          "MacroPrec": 0.904882433857215,
+          "MacroRec": 0.9339424295862375,
+          "AUC_ovr": 0.9662885461775239,
+          "Agreement": 0.9384615384615385
+        },
+        "ola": {
+          "ACC": 0.969683257918552,
+          "MacroF1": 0.9528801916187817,
+          "MacroPrec": 0.9431560146702946,
+          "MacroRec": 0.963814712939741,
+          "AUC_ovr": 0.9439748312986479,
+          "Agreement": 0.969683257918552
+        },
+        "precise_a11": {
+          "ACC": 0.9995475113122172,
+          "MacroF1": 0.9993490622774515,
+          "MacroPrec": 0.9989304812834223,
+          "MacroRec": 0.9997706422018349,
+          "AUC_ovr": 0.9686250695197177,
+          "Agreement": 0.9995475113122172
+        }
+      },
+      "report_vs_ground_truth_records": [
+        {
+          "Method": "Original",
+          "Split": "fit",
+          "ACC": 0.3728813559322034,
+          "MacroF1": 0.36328772455027836,
+          "MacroPrec": 0.41892063492063497,
+          "MacroRec": 0.34767316017316013,
+          "AUC_ovr": 0.6887079883940348,
+          "Agreement": 1.0
+        },
+        {
+          "Method": "Original",
+          "Split": "test",
+          "ACC": 0.34705882352941175,
+          "MacroF1": 0.2975988552473062,
+          "MacroPrec": 0.3367820188901291,
+          "MacroRec": 0.3043198815866276,
+          "AUC_ovr": 0.6595925928831745,
+          "Agreement": 1.0
+        },
+        {
+          "Method": "Quad4FHE",
+          "Split": "fit",
+          "ACC": 0.3898305084745763,
+          "MacroF1": 0.38092430763879825,
+          "MacroPrec": 0.4225882352941176,
+          "MacroRec": 0.3698953823953824,
+          "AUC_ovr": 0.6856044046392885,
+          "Agreement": 0.8813559322033898
+        },
+        {
+          "Method": "Quad4FHE",
+          "Split": "test",
+          "ACC": 0.3429864253393665,
+          "MacroF1": 0.28585297394285625,
+          "MacroPrec": 0.3268693100962575,
+          "MacroRec": 0.2968163988536009,
+          "AUC_ovr": 0.659817436361566,
+          "Agreement": 0.9190045248868778
+        },
+        {
+          "Method": "square",
+          "Split": "fit",
+          "ACC": 0.2033898305084746,
+          "MacroF1": 0.14668258570697595,
+          "MacroPrec": 0.19217391304347825,
+          "MacroRec": 0.15972222222222224,
+          "AUC_ovr": 0.5544671581648325,
+          "Agreement": 0.559322033898305
+        },
+        {
+          "Method": "square",
+          "Split": "test",
+          "ACC": 0.2737556561085973,
+          "MacroF1": 0.2040155016071267,
+          "MacroPrec": 0.2593664027730015,
+          "MacroRec": 0.22792235079292422,
+          "AUC_ovr": 0.5662748935101186,
+          "Agreement": 0.5416289592760181
+        },
+        {
+          "Method": "ls_poly_2",
+          "Split": "fit",
+          "ACC": 0.3389830508474576,
+          "MacroF1": 0.27499140006879946,
+          "MacroPrec": 0.3659352142110763,
+          "MacroRec": 0.2878246753246753,
+          "AUC_ovr": 0.6794147828915271,
+          "Agreement": 0.7627118644067796
+        },
+        {
+          "Method": "ls_poly_2",
+          "Split": "test",
+          "ACC": 0.3506787330316742,
+          "MacroF1": 0.2516929029908728,
+          "MacroPrec": 0.3819150228949725,
+          "MacroRec": 0.2892617726531409,
+          "AUC_ovr": 0.6634379450268064,
+          "Agreement": 0.7963800904977375
+        },
+        {
+          "Method": "ls_poly_3",
+          "Split": "fit",
+          "ACC": 0.3220338983050847,
+          "MacroF1": 0.2973494341915395,
+          "MacroPrec": 0.4537462537462537,
+          "MacroRec": 0.28504689754689755,
+          "AUC_ovr": 0.6833531171670706,
+          "Agreement": 0.8135593220338984
+        },
+        {
+          "Method": "ls_poly_3",
+          "Split": "test",
+          "ACC": 0.34932126696832577,
+          "MacroF1": 0.26232198092420206,
+          "MacroPrec": 0.35626761573341764,
+          "MacroRec": 0.2919018953031642,
+          "AUC_ovr": 0.6639135739418838,
+          "Agreement": 0.8199095022624434
+        },
+        {
+          "Method": "ls_poly_5",
+          "Split": "fit",
+          "ACC": 0.3559322033898305,
+          "MacroF1": 0.35134502923976607,
+          "MacroPrec": 0.5136363636363636,
+          "MacroRec": 0.32545093795093794,
+          "AUC_ovr": 0.6860118202211225,
+          "Agreement": 0.864406779661017
+        },
+        {
+          "Method": "ls_poly_5",
+          "Split": "test",
+          "ACC": 0.351131221719457,
+          "MacroF1": 0.2830543930392137,
+          "MacroPrec": 0.34059559572434106,
+          "MacroRec": 0.3001037972373374,
+          "AUC_ovr": 0.6634185596726059,
+          "Agreement": 0.8941176470588236
+        },
+        {
+          "Method": "ls_poly_7",
+          "Split": "fit",
+          "ACC": 0.3728813559322034,
+          "MacroF1": 0.35521367521367514,
+          "MacroPrec": 0.4629399585921325,
+          "MacroRec": 0.3379509379509379,
+          "AUC_ovr": 0.6855371979441747,
+          "Agreement": 0.9152542372881356
+        },
+        {
+          "Method": "ls_poly_7",
+          "Split": "test",
+          "ACC": 0.34886877828054297,
+          "MacroF1": 0.2896477604406503,
+          "MacroPrec": 0.3366062079023412,
+          "MacroRec": 0.30184573616300725,
+          "AUC_ovr": 0.6614473058730692,
+          "Agreement": 0.9248868778280543
+        },
+        {
+          "Method": "remez_2",
+          "Split": "fit",
+          "ACC": 0.3559322033898305,
+          "MacroF1": 0.3398290598290598,
+          "MacroPrec": 0.4981366459627329,
+          "MacroRec": 0.31976911976911976,
+          "AUC_ovr": 0.6828880060507967,
+          "Agreement": 0.8135593220338984
+        },
+        {
+          "Method": "remez_2",
+          "Split": "test",
+          "ACC": 0.351131221719457,
+          "MacroF1": 0.2757160193503599,
+          "MacroPrec": 0.3514471248446948,
+          "MacroRec": 0.29745722888078324,
+          "AUC_ovr": 0.6642217990461922,
+          "Agreement": 0.8457013574660633
+        },
+        {
+          "Method": "remez_3",
+          "Split": "fit",
+          "ACC": 0.3559322033898305,
+          "MacroF1": 0.3398290598290598,
+          "MacroPrec": 0.4981366459627329,
+          "MacroRec": 0.31976911976911976,
+          "AUC_ovr": 0.6826197420150908,
+          "Agreement": 0.8135593220338984
+        },
+        {
+          "Method": "remez_3",
+          "Split": "test",
+          "ACC": 0.34705882352941175,
+          "MacroF1": 0.2782699658707687,
+          "MacroPrec": 0.3342899244406997,
+          "MacroRec": 0.2963454811817151,
+          "AUC_ovr": 0.6640564975256587,
+          "Agreement": 0.8619909502262444
+        },
+        {
+          "Method": "remez_5",
+          "Split": "fit",
+          "ACC": 0.3728813559322034,
+          "MacroF1": 0.367304625199362,
+          "MacroPrec": 0.3902750190985485,
+          "MacroRec": 0.3573953823953824,
+          "AUC_ovr": 0.6866848397080956,
+          "Agreement": 0.8983050847457628
+        },
+        {
+          "Method": "remez_5",
+          "Split": "test",
+          "ACC": 0.34705882352941175,
+          "MacroF1": 0.29563917798294187,
+          "MacroPrec": 0.330080637601737,
+          "MacroRec": 0.3041594922973546,
+          "AUC_ovr": 0.6625264661643807,
+          "Agreement": 0.9235294117647059
+        },
+        {
+          "Method": "remez_7",
+          "Split": "fit",
+          "ACC": 0.3559322033898305,
+          "MacroF1": 0.34355048460311616,
+          "MacroPrec": 0.370153452685422,
+          "MacroRec": 0.3351731601731601,
+          "AUC_ovr": 0.687974950114485,
+          "Agreement": 0.9322033898305084
+        },
+        {
+          "Method": "remez_7",
+          "Split": "test",
+          "ACC": 0.34841628959276016,
+          "MacroF1": 0.30434721724539,
+          "MacroPrec": 0.3390826400928383,
+          "MacroRec": 0.30884873988927425,
+          "AUC_ovr": 0.6601629662859338,
+          "Agreement": 0.9384615384615385
+        },
+        {
+          "Method": "ola",
+          "Split": "fit",
+          "ACC": 0.3728813559322034,
+          "MacroF1": 0.3628457816693111,
+          "MacroPrec": 0.41178743961352654,
+          "MacroRec": 0.34767316017316013,
+          "AUC_ovr": 0.6872377041563087,
+          "Agreement": 0.9661016949152542
+        },
+        {
+          "Method": "ola",
+          "Split": "test",
+          "ACC": 0.34524886877828054,
+          "MacroF1": 0.29844367194537724,
+          "MacroPrec": 0.3334675271901922,
+          "MacroRec": 0.3044942062321728,
+          "AUC_ovr": 0.6545999075641467,
+          "Agreement": 0.969683257918552
+        },
+        {
+          "Method": "precise_a11",
+          "Split": "fit",
+          "ACC": 0.3728813559322034,
+          "MacroF1": 0.36328772455027836,
+          "MacroPrec": 0.41892063492063497,
+          "MacroRec": 0.34767316017316013,
+          "AUC_ovr": 0.6887079883940348,
+          "Agreement": 1.0
+        },
+        {
+          "Method": "precise_a11",
+          "Split": "test",
+          "ACC": 0.34705882352941175,
+          "MacroF1": 0.2976088916012694,
+          "MacroPrec": 0.3366350059561445,
+          "MacroRec": 0.3043198815866276,
+          "AUC_ovr": 0.6596009000422851,
+          "Agreement": 0.9995475113122172
+        }
+      ],
+      "report_vs_pseudo_labels_records": [
+        {
+          "Method": "Original",
+          "Split": "fit",
+          "ACC": 1.0,
+          "MacroF1": 1.0,
+          "MacroPrec": 1.0,
+          "MacroRec": 1.0,
+          "AUC_ovr": 0.9721550866371527,
+          "Agreement": 1.0
+        },
+        {
+          "Method": "Original",
+          "Split": "test",
+          "ACC": 1.0,
+          "MacroF1": 1.0,
+          "MacroPrec": 1.0,
+          "MacroRec": 1.0,
+          "AUC_ovr": 0.9686247815073761,
+          "Agreement": 1.0
+        },
+        {
+          "Method": "Quad4FHE",
+          "Split": "fit",
+          "ACC": 0.8813559322033898,
+          "MacroF1": 0.8598477078477078,
+          "MacroPrec": 0.8500392156862745,
+          "MacroRec": 0.878984126984127,
+          "AUC_ovr": 0.9628786819748083,
+          "Agreement": 0.8813559322033898
+        },
+        {
+          "Method": "Quad4FHE",
+          "Split": "test",
+          "ACC": 0.9190045248868778,
+          "MacroF1": 0.8875793451798618,
+          "MacroPrec": 0.9054889097312024,
+          "MacroRec": 0.87473977518876,
+          "AUC_ovr": 0.9541818035849673,
+          "Agreement": 0.9190045248868778
+        },
+        {
+          "Method": "square",
+          "Split": "fit",
+          "ACC": 0.559322033898305,
+          "MacroF1": 0.37210409745293466,
+          "MacroPrec": 0.40252173913043476,
+          "MacroRec": 0.37447619047619046,
+          "AUC_ovr": 0.7616247814038345,
+          "Agreement": 0.559322033898305
+        },
+        {
+          "Method": "square",
+          "Split": "test",
+          "ACC": 0.5416289592760181,
+          "MacroF1": 0.40413138143137656,
+          "MacroPrec": 0.4854907877756725,
+          "MacroRec": 0.3961047041244058,
+          "AUC_ovr": 0.7306013419161289,
+          "Agreement": 0.5416289592760181
+        },
+        {
+          "Method": "ls_poly_2",
+          "Split": "fit",
+          "ACC": 0.7627118644067796,
+          "MacroF1": 0.5883251500272777,
+          "MacroPrec": 0.648380355276907,
+          "MacroRec": 0.5822857142857142,
+          "AUC_ovr": 0.9649774294996677,
+          "Agreement": 0.7627118644067796
+        },
+        {
+          "Method": "ls_poly_2",
+          "Split": "test",
+          "ACC": 0.7963800904977375,
+          "MacroF1": 0.6550832759062774,
+          "MacroPrec": 0.8842217466948579,
+          "MacroRec": 0.5959279303714018,
+          "AUC_ovr": 0.9602931729641536,
+          "Agreement": 0.7963800904977375
+        },
+        {
+          "Method": "ls_poly_3",
+          "Split": "fit",
+          "ACC": 0.8135593220338984,
+          "MacroF1": 0.7328359583678733,
+          "MacroPrec": 0.8722277722277723,
+          "MacroRec": 0.6908571428571428,
+          "AUC_ovr": 0.9676407050094282,
+          "Agreement": 0.8135593220338984
+        },
+        {
+          "Method": "ls_poly_3",
+          "Split": "test",
+          "ACC": 0.8199095022624434,
+          "MacroF1": 0.7170026607015655,
+          "MacroPrec": 0.8696425031258943,
+          "MacroRec": 0.6572879782714266,
+          "AUC_ovr": 0.9623883340315686,
+          "Agreement": 0.8199095022624434
+        },
+        {
+          "Method": "ls_poly_5",
+          "Split": "fit",
+          "ACC": 0.864406779661017,
+          "MacroF1": 0.8019959473150962,
+          "MacroPrec": 0.9,
+          "MacroRec": 0.7674285714285715,
+          "AUC_ovr": 0.9688246207270597,
+          "Agreement": 0.864406779661017
+        },
+        {
+          "Method": "ls_poly_5",
+          "Split": "test",
+          "ACC": 0.8941176470588236,
+          "MacroF1": 0.851270802252493,
+          "MacroPrec": 0.9141256934869368,
+          "MacroRec": 0.8088484630493384,
+          "AUC_ovr": 0.9661345783666893,
+          "Agreement": 0.8941176470588236
+        },
+        {
+          "Method": "ls_poly_7",
+          "Split": "fit",
+          "ACC": 0.9152542372881356,
+          "MacroF1": 0.8887049941927991,
+          "MacroPrec": 0.9565217391304348,
+          "MacroRec": 0.8539999999999999,
+          "AUC_ovr": 0.970973945763042,
+          "Agreement": 0.9152542372881356
+        },
+        {
+          "Method": "ls_poly_7",
+          "Split": "test",
+          "ACC": 0.9248868778280543,
+          "MacroF1": 0.9002273289001936,
+          "MacroPrec": 0.9294990673198169,
+          "MacroRec": 0.8760931653215558,
+          "AUC_ovr": 0.9670647429654675,
+          "Agreement": 0.9248868778280543
+        },
+        {
+          "Method": "remez_2",
+          "Split": "fit",
+          "ACC": 0.8135593220338984,
+          "MacroF1": 0.7630952380952382,
+          "MacroPrec": 0.8671325051759835,
+          "MacroRec": 0.7197460317460318,
+          "AUC_ovr": 0.9659037157114632,
+          "Agreement": 0.8135593220338984
+        },
+        {
+          "Method": "remez_2",
+          "Split": "test",
+          "ACC": 0.8457013574660633,
+          "MacroF1": 0.7744874914107703,
+          "MacroPrec": 0.8747961206949029,
+          "MacroRec": 0.721628557650277,
+          "AUC_ovr": 0.9603837040244485,
+          "Agreement": 0.8457013574660633
+        },
+        {
+          "Method": "remez_3",
+          "Split": "fit",
+          "ACC": 0.8135593220338984,
+          "MacroF1": 0.7630952380952382,
+          "MacroPrec": 0.8671325051759835,
+          "MacroRec": 0.7197460317460318,
+          "AUC_ovr": 0.9661033012367304,
+          "Agreement": 0.8135593220338984
+        },
+        {
+          "Method": "remez_3",
+          "Split": "test",
+          "ACC": 0.8619909502262444,
+          "MacroF1": 0.8137544535112197,
+          "MacroPrec": 0.8759015210836392,
+          "MacroRec": 0.7725926232892389,
+          "AUC_ovr": 0.9618579923793551,
+          "Agreement": 0.8619909502262444
+        },
+        {
+          "Method": "remez_5",
+          "Split": "fit",
+          "ACC": 0.8983050847457628,
+          "MacroF1": 0.889773725092874,
+          "MacroPrec": 0.8543277310924369,
+          "MacroRec": 0.9426666666666665,
+          "AUC_ovr": 0.9701543427081447,
+          "Agreement": 0.8983050847457628
+        },
+        {
+          "Method": "remez_5",
+          "Split": "test",
+          "ACC": 0.9235294117647059,
+          "MacroF1": 0.9017420980779403,
+          "MacroPrec": 0.8990570306733134,
+          "MacroRec": 0.9059968501510054,
+          "AUC_ovr": 0.9656832078759132,
+          "Agreement": 0.9235294117647059
+        },
+        {
+          "Method": "remez_7",
+          "Split": "fit",
+          "ACC": 0.9322033898305084,
+          "MacroF1": 0.9207864357864357,
+          "MacroPrec": 0.8899019607843137,
+          "MacroRec": 0.9617777777777778,
+          "AUC_ovr": 0.97221268799748,
+          "Agreement": 0.9322033898305084
+        },
+        {
+          "Method": "remez_7",
+          "Split": "test",
+          "ACC": 0.9384615384615385,
+          "MacroF1": 0.9183034481838964,
+          "MacroPrec": 0.904882433857215,
+          "MacroRec": 0.9339424295862375,
+          "AUC_ovr": 0.9662885461775239,
+          "Agreement": 0.9384615384615385
+        },
+        {
+          "Method": "ola",
+          "Split": "fit",
+          "ACC": 0.9661016949152542,
+          "MacroF1": 0.9666666666666668,
+          "MacroPrec": 0.9555555555555555,
+          "MacroRec": 0.984,
+          "AUC_ovr": 0.9721550866371527,
+          "Agreement": 0.9661016949152542
+        },
+        {
+          "Method": "ola",
+          "Split": "test",
+          "ACC": 0.969683257918552,
+          "MacroF1": 0.9528801916187817,
+          "MacroPrec": 0.9431560146702946,
+          "MacroRec": 0.963814712939741,
+          "AUC_ovr": 0.9439748312986479,
+          "Agreement": 0.969683257918552
+        },
+        {
+          "Method": "precise_a11",
+          "Split": "fit",
+          "ACC": 1.0,
+          "MacroF1": 1.0,
+          "MacroPrec": 1.0,
+          "MacroRec": 1.0,
+          "AUC_ovr": 0.9721550866371527,
+          "Agreement": 1.0
+        },
+        {
+          "Method": "precise_a11",
+          "Split": "test",
+          "ACC": 0.9995475113122172,
+          "MacroF1": 0.9993490622774515,
+          "MacroPrec": 0.9989304812834223,
+          "MacroRec": 0.9997706422018349,
+          "AUC_ovr": 0.9686250695197177,
+          "Agreement": 0.9995475113122172
+        }
+      ],
+      "pool": "01%"
+    },
+    {
+      "key": "pool=05%",
+      "hidden_dim": 256,
+      "pool_fraction": 0.05,
+      "rep_fit_size": 296,
+      "original": {
+        "test_top1_acc": 0.34705882352941175,
+        "test_top5_acc": null
+      },
+      "quad4fhe": {
+        "alpha": 0.1320541132020114,
+        "beta": 0.3491583762666891,
+        "eta": 0.12285949017684332,
+        "threshold": null,
+        "zero_threshold_realized": null,
+        "method_used": "soft(C=100.0)",
+        "hard_feasible": false,
+        "empirical_margin": -1.5828528769699481,
+        "normalized_margin": -0.08925190891120664,
+        "quant_decimals": 0,
+        "constraint_version": "multiclass_bias_free_dL_v1",
+        "he_artifact_dir": "he_artifacts_sst5_pool_05",
+        "calib_n": 296,
+        "calib_agreement": 0.8817567567567568,
+        "calib_mismatch_count": 35,
+        "exact_preserved_on_calib": false,
+        "test_n": 2210,
+        "test_agreement": 0.918552036199095,
+        "test_mismatch_count": 180,
+        "calib_test_agreement_gap": -0.03679527944233818,
+        "test_top1_acc": 0.34479638009049773,
+        "test_top5_acc": null,
+        "test_macro_f1": 0.2898324839525441,
+        "solver_diagnostics": {
+          "num_pairwise_constraints": 1184,
+          "min_pairwise_margin": -1.5828528769699481,
+          "normalized_min_pairwise_margin": -0.08925190891120664,
+          "calib_agreement": 0.8817567567567568,
+          "calib_mismatch_count": 35,
+          "exact_preserved": false,
+          "slack_positive_count": 77,
+          "sum_slack": 73.08277216193515,
+          "mean_slack": 0.24690125730383497,
+          "max_slack": 2.582852876969948,
+          "pairwise_slack_positive_count": 95,
+          "pairwise_sum_slack": 84.28950157979077,
+          "pairwise_max_slack": 2.582852876969948,
+          "soft_C_grid": [
+            0.001,
+            0.01,
+            0.1,
+            1.0,
+            10.0,
+            100.0
+          ],
+          "selected_C": 100.0,
+          "soft_trace": [
+            {
+              "C": 0.001,
+              "objective": 0.7753264184269062,
+              "calib_agreement": 0.831081081081081,
+              "calib_mismatch_count": 50,
+              "min_pairwise_margin": -0.14662854713917015,
+              "sum_slack": 254.63795376638717,
+              "max_slack": 1.1466285471391702,
+              "slack_positive_count": 296
+            },
+            {
+              "C": 0.01,
+              "objective": 2.486523850897895,
+              "calib_agreement": 0.8581081081081081,
+              "calib_mismatch_count": 42,
+              "min_pairwise_margin": -0.2780193530760198,
+              "sum_slack": 159.85130644963692,
+              "max_slack": 1.2780193530760198,
+              "slack_positive_count": 241
+            },
+            {
+              "C": 0.1,
+              "objective": 13.783547234403896,
+              "calib_agreement": 0.8378378378378378,
+              "calib_mismatch_count": 48,
+              "min_pairwise_margin": -0.5670617328840448,
+              "sum_slack": 113.91189514398441,
+              "max_slack": 1.5670617328840448,
+              "slack_positive_count": 154
+            },
+            {
+              "C": 1.0,
+              "objective": 103.07033693960076,
+              "calib_agreement": 0.8445945945945946,
+              "calib_mismatch_count": 46,
+              "min_pairwise_margin": -1.0099034018072006,
+              "sum_slack": 91.62619482510928,
+              "max_slack": 2.0099034018072004,
+              "slack_positive_count": 114
+            },
+            {
+              "C": 10.0,
+              "objective": 831.1872595196608,
+              "calib_agreement": 0.8783783783783784,
+              "calib_mismatch_count": 36,
+              "min_pairwise_margin": -1.2043225358887206,
+              "sum_slack": 76.86073696457092,
+              "max_slack": 2.2043225358887204,
+              "slack_positive_count": 89
+            },
+            {
+              "C": 100.0,
+              "objective": 7465.5364216657,
+              "calib_agreement": 0.8817567567567568,
+              "calib_mismatch_count": 35,
+              "min_pairwise_margin": -1.5828528769699481,
+              "sum_slack": 73.08277216193515,
+              "max_slack": 2.582852876969948,
+              "slack_positive_count": 77
+            }
+          ],
+          "regime": "soft(C=100.0)",
+          "constraint_version": "multiclass_bias_free_dL_v1",
+          "fit_exact_preserved": false,
+          "fit_mismatch_count": 35,
+          "fit_agreement": 0.8817567567567568
+        },
+        "num_pairwise_constraints": 1184,
+        "min_pairwise_margin": -1.5828528769699481,
+        "normalized_min_pairwise_margin": -0.08925190891120664,
+        "slack_positive_count": 77,
+        "sum_slack": 73.08277216193515,
+        "mean_slack": 0.24690125730383497,
+        "max_slack": 2.582852876969948,
+        "pairwise_slack_positive_count": 95,
+        "pairwise_sum_slack": 84.28950157979077,
+        "pairwise_mean_slack": null,
+        "pairwise_max_slack": 2.582852876969948,
+        "selected_C": 100.0,
+        "soft_C_grid": [
+          0.001,
+          0.01,
+          0.1,
+          1.0,
+          10.0,
+          100.0
+        ],
+        "soft_trace": [
+          {
+            "C": 0.001,
+            "objective": 0.7753264184269062,
+            "calib_agreement": 0.831081081081081,
+            "calib_mismatch_count": 50,
+            "min_pairwise_margin": -0.14662854713917015,
+            "sum_slack": 254.63795376638717,
+            "max_slack": 1.1466285471391702,
+            "slack_positive_count": 296
+          },
+          {
+            "C": 0.01,
+            "objective": 2.486523850897895,
+            "calib_agreement": 0.8581081081081081,
+            "calib_mismatch_count": 42,
+            "min_pairwise_margin": -0.2780193530760198,
+            "sum_slack": 159.85130644963692,
+            "max_slack": 1.2780193530760198,
+            "slack_positive_count": 241
+          },
+          {
+            "C": 0.1,
+            "objective": 13.783547234403896,
+            "calib_agreement": 0.8378378378378378,
+            "calib_mismatch_count": 48,
+            "min_pairwise_margin": -0.5670617328840448,
+            "sum_slack": 113.91189514398441,
+            "max_slack": 1.5670617328840448,
+            "slack_positive_count": 154
+          },
+          {
+            "C": 1.0,
+            "objective": 103.07033693960076,
+            "calib_agreement": 0.8445945945945946,
+            "calib_mismatch_count": 46,
+            "min_pairwise_margin": -1.0099034018072006,
+            "sum_slack": 91.62619482510928,
+            "max_slack": 2.0099034018072004,
+            "slack_positive_count": 114
+          },
+          {
+            "C": 10.0,
+            "objective": 831.1872595196608,
+            "calib_agreement": 0.8783783783783784,
+            "calib_mismatch_count": 36,
+            "min_pairwise_margin": -1.2043225358887206,
+            "sum_slack": 76.86073696457092,
+            "max_slack": 2.2043225358887204,
+            "slack_positive_count": 89
+          },
+          {
+            "C": 100.0,
+            "objective": 7465.5364216657,
+            "calib_agreement": 0.8817567567567568,
+            "calib_mismatch_count": 35,
+            "min_pairwise_margin": -1.5828528769699481,
+            "sum_slack": 73.08277216193515,
+            "max_slack": 2.582852876969948,
+            "slack_positive_count": 77
+          }
+        ],
+        "selected_mu": null,
+        "mu_grid": null,
+        "mu_p": null,
+        "mu_n": null
+      },
+      "report_vs_ground_truth_test": {
+        "Original": {
+          "ACC": 0.34705882352941175,
+          "MacroF1": 0.2975988552473062,
+          "MacroPrec": 0.3367820188901291,
+          "MacroRec": 0.3043198815866276,
+          "AUC_ovr": 0.6595925928831745,
+          "Agreement": 1.0
+        },
+        "Quad4FHE": {
+          "ACC": 0.34479638009049773,
+          "MacroF1": 0.2898324839525441,
+          "MacroPrec": 0.3275722551920142,
+          "MacroRec": 0.29989770061636084,
+          "AUC_ovr": 0.6612390889043628,
+          "Agreement": 0.918552036199095
+        },
+        "square": {
+          "ACC": 0.2737556561085973,
+          "MacroF1": 0.2040155016071267,
+          "MacroPrec": 0.2593664027730015,
+          "MacroRec": 0.22792235079292422,
+          "AUC_ovr": 0.5662748935101186,
+          "Agreement": 0.5416289592760181
+        },
+        "ls_poly_2": {
+          "ACC": 0.34705882352941175,
+          "MacroF1": 0.23725235164044084,
+          "MacroPrec": 0.4122184169893763,
+          "MacroRec": 0.28356908525002905,
+          "AUC_ovr": 0.6636791456190037,
+          "Agreement": 0.7552036199095022
+        },
+        "ls_poly_3": {
+          "ACC": 0.34796380090497736,
+          "MacroF1": 0.24173595802348852,
+          "MacroPrec": 0.41766489979610427,
+          "MacroRec": 0.28534295150121103,
+          "AUC_ovr": 0.6637173636204671,
+          "Agreement": 0.7601809954751131
+        },
+        "ls_poly_5": {
+          "ACC": 0.34932126696832577,
+          "MacroF1": 0.2668203533414548,
+          "MacroPrec": 0.3573996441657531,
+          "MacroRec": 0.2933252331143341,
+          "AUC_ovr": 0.6635682607502174,
+          "Agreement": 0.8371040723981901
+        },
+        "ls_poly_7": {
+          "ACC": 0.35203619909502265,
+          "MacroF1": 0.2803763989179826,
+          "MacroPrec": 0.34284315692516054,
+          "MacroRec": 0.2995782685714078,
+          "AUC_ovr": 0.6628698203227406,
+          "Agreement": 0.885972850678733
+        },
+        "remez_2": {
+          "ACC": 0.3502262443438914,
+          "MacroF1": 0.2641751343072759,
+          "MacroPrec": 0.36072978974236786,
+          "MacroRec": 0.292904276709124,
+          "AUC_ovr": 0.6644780226665135,
+          "Agreement": 0.818552036199095
+        },
+        "remez_3": {
+          "ACC": 0.3506787330316742,
+          "MacroF1": 0.2671934406371016,
+          "MacroPrec": 0.35977914611785633,
+          "MacroRec": 0.29413370876416056,
+          "AUC_ovr": 0.664473454687976,
+          "Agreement": 0.8235294117647058
+        },
+        "remez_5": {
+          "ACC": 0.34479638009049773,
+          "MacroF1": 0.28718944270114627,
+          "MacroPrec": 0.3315072914767578,
+          "MacroRec": 0.2991834691082941,
+          "AUC_ovr": 0.6634324730175457,
+          "Agreement": 0.9027149321266968
+        },
+        "remez_7": {
+          "ACC": 0.34796380090497736,
+          "MacroF1": 0.29806288273590564,
+          "MacroPrec": 0.33298407859186746,
+          "MacroRec": 0.30538842791876963,
+          "AUC_ovr": 0.6618964762406232,
+          "Agreement": 0.9262443438914028
+        },
+        "ola": {
+          "ACC": 0.34751131221719456,
+          "MacroF1": 0.2983898704778368,
+          "MacroPrec": 0.3398678953190151,
+          "MacroRec": 0.3046054171144512,
+          "AUC_ovr": 0.659899386339357,
+          "Agreement": 0.9814479638009049
+        },
+        "precise_a11": {
+          "ACC": 0.34705882352941175,
+          "MacroF1": 0.2976088916012694,
+          "MacroPrec": 0.3366350059561445,
+          "MacroRec": 0.3043198815866276,
+          "AUC_ovr": 0.6595995583361927,
+          "Agreement": 0.9995475113122172
+        }
+      },
+      "report_vs_pseudo_labels_test": {
+        "Original": {
+          "ACC": 1.0,
+          "MacroF1": 1.0,
+          "MacroPrec": 1.0,
+          "MacroRec": 1.0,
+          "AUC_ovr": 0.9686247815073761,
+          "Agreement": 1.0
+        },
+        "Quad4FHE": {
+          "ACC": 0.918552036199095,
+          "MacroF1": 0.8889297826375294,
+          "MacroPrec": 0.8982629220536154,
+          "MacroRec": 0.8822923402012064,
+          "AUC_ovr": 0.9570907828896356,
+          "Agreement": 0.918552036199095
+        },
+        "square": {
+          "ACC": 0.5416289592760181,
+          "MacroF1": 0.40413138143137656,
+          "MacroPrec": 0.4854907877756725,
+          "MacroRec": 0.3961047041244058,
+          "AUC_ovr": 0.7306013419161289,
+          "Agreement": 0.5416289592760181
+        },
+        "ls_poly_2": {
+          "ACC": 0.7552036199095022,
+          "MacroF1": 0.5704441929653659,
+          "MacroPrec": 0.8663776828077554,
+          "MacroRec": 0.5240393962873091,
+          "AUC_ovr": 0.9579372796697578,
+          "Agreement": 0.7552036199095022
+        },
+        "ls_poly_3": {
+          "ACC": 0.7601809954751131,
+          "MacroF1": 0.5823806136024823,
+          "MacroPrec": 0.865290226184013,
+          "MacroRec": 0.5336413100653465,
+          "AUC_ovr": 0.9582763115967412,
+          "Agreement": 0.7601809954751131
+        },
+        "ls_poly_5": {
+          "ACC": 0.8371040723981901,
+          "MacroF1": 0.745072822584647,
+          "MacroPrec": 0.8846929494347222,
+          "MacroRec": 0.6851241956818261,
+          "AUC_ovr": 0.9632340327980733,
+          "Agreement": 0.8371040723981901
+        },
+        "ls_poly_7": {
+          "ACC": 0.885972850678733,
+          "MacroF1": 0.8345359637348773,
+          "MacroPrec": 0.9127382094513076,
+          "MacroRec": 0.7858319208850671,
+          "AUC_ovr": 0.9654302575116269,
+          "Agreement": 0.885972850678733
+        },
+        "remez_2": {
+          "ACC": 0.818552036199095,
+          "MacroF1": 0.7146310546553015,
+          "MacroPrec": 0.8665591888242868,
+          "MacroRec": 0.6553312015517772,
+          "AUC_ovr": 0.9587258119140808,
+          "Agreement": 0.818552036199095
+        },
+        "remez_3": {
+          "ACC": 0.8235294117647058,
+          "MacroF1": 0.7270368445066436,
+          "MacroPrec": 0.8686030008364035,
+          "MacroRec": 0.667966456818435,
+          "AUC_ovr": 0.9590109720786968,
+          "Agreement": 0.8235294117647058
+        },
+        "remez_5": {
+          "ACC": 0.9027149321266968,
+          "MacroF1": 0.8722581735474618,
+          "MacroPrec": 0.8962129071599259,
+          "MacroRec": 0.852342969289752,
+          "AUC_ovr": 0.9638156201037915,
+          "Agreement": 0.9027149321266968
+        },
+        "remez_7": {
+          "ACC": 0.9262443438914028,
+          "MacroF1": 0.9031950732299521,
+          "MacroPrec": 0.8982131060270859,
+          "MacroRec": 0.9095057986814614,
+          "AUC_ovr": 0.9657523468745985,
+          "Agreement": 0.9262443438914028
+        },
+        "ola": {
+          "ACC": 0.9814479638009049,
+          "MacroF1": 0.9756749726372702,
+          "MacroPrec": 0.9781844793348526,
+          "MacroRec": 0.9732162102133607,
+          "AUC_ovr": 0.9671482506863706,
+          "Agreement": 0.9814479638009049
+        },
+        "precise_a11": {
+          "ACC": 0.9995475113122172,
+          "MacroF1": 0.9993490622774515,
+          "MacroPrec": 0.9989304812834223,
+          "MacroRec": 0.9997706422018349,
+          "AUC_ovr": 0.9686263493606588,
+          "Agreement": 0.9995475113122172
+        }
+      },
+      "report_vs_ground_truth_records": [
+        {
+          "Method": "Original",
+          "Split": "fit",
+          "ACC": 0.30405405405405406,
+          "MacroF1": 0.2674144141716298,
+          "MacroPrec": 0.29236186510002227,
+          "MacroRec": 0.27136528189159764,
+          "AUC_ovr": 0.6245536565673475,
+          "Agreement": 1.0
+        },
+        {
+          "Method": "Original",
+          "Split": "test",
+          "ACC": 0.34705882352941175,
+          "MacroF1": 0.2975988552473062,
+          "MacroPrec": 0.3367820188901291,
+          "MacroRec": 0.3043198815866276,
+          "AUC_ovr": 0.6595925928831745,
+          "Agreement": 1.0
+        },
+        {
+          "Method": "Quad4FHE",
+          "Split": "fit",
+          "ACC": 0.30743243243243246,
+          "MacroF1": 0.2694332750385827,
+          "MacroPrec": 0.2943824132142082,
+          "MacroRec": 0.2770132401711349,
+          "AUC_ovr": 0.6208911871798385,
+          "Agreement": 0.8817567567567568
+        },
+        {
+          "Method": "Quad4FHE",
+          "Split": "test",
+          "ACC": 0.34479638009049773,
+          "MacroF1": 0.2898324839525441,
+          "MacroPrec": 0.3275722551920142,
+          "MacroRec": 0.29989770061636084,
+          "AUC_ovr": 0.6612390889043628,
+          "Agreement": 0.918552036199095
+        },
+        {
+          "Method": "square",
+          "Split": "fit",
+          "ACC": 0.25,
+          "MacroF1": 0.19220441011788283,
+          "MacroPrec": 0.2259985193781388,
+          "MacroRec": 0.20550766647257873,
+          "AUC_ovr": 0.5479894983892077,
+          "Agreement": 0.4864864864864865
+        },
+        {
+          "Method": "square",
+          "Split": "test",
+          "ACC": 0.2737556561085973,
+          "MacroF1": 0.2040155016071267,
+          "MacroPrec": 0.2593664027730015,
+          "MacroRec": 0.22792235079292422,
+          "AUC_ovr": 0.5662748935101186,
+          "Agreement": 0.5416289592760181
+        },
+        {
+          "Method": "ls_poly_2",
+          "Split": "fit",
+          "ACC": 0.3141891891891892,
+          "MacroF1": 0.21120120201418593,
+          "MacroPrec": 0.36358869129046967,
+          "MacroRec": 0.24762769718910066,
+          "AUC_ovr": 0.6219701408021086,
+          "Agreement": 0.7263513513513513
+        },
+        {
+          "Method": "ls_poly_2",
+          "Split": "test",
+          "ACC": 0.34705882352941175,
+          "MacroF1": 0.23725235164044084,
+          "MacroPrec": 0.4122184169893763,
+          "MacroRec": 0.28356908525002905,
+          "AUC_ovr": 0.6636791456190037,
+          "Agreement": 0.7552036199095022
+        },
+        {
+          "Method": "ls_poly_3",
+          "Split": "fit",
+          "ACC": 0.31756756756756754,
+          "MacroF1": 0.21997237147911047,
+          "MacroPrec": 0.39568627450980387,
+          "MacroRec": 0.25217315173455523,
+          "AUC_ovr": 0.622113782143712,
+          "Agreement": 0.7331081081081081
+        },
+        {
+          "Method": "ls_poly_3",
+          "Split": "test",
+          "ACC": 0.34796380090497736,
+          "MacroF1": 0.24173595802348852,
+          "MacroPrec": 0.41766489979610427,
+          "MacroRec": 0.28534295150121103,
+          "AUC_ovr": 0.6637173636204671,
+          "Agreement": 0.7601809954751131
+        },
+        {
+          "Method": "ls_poly_5",
+          "Split": "fit",
+          "ACC": 0.3108108108108108,
+          "MacroF1": 0.255051948842674,
+          "MacroPrec": 0.32856160747465096,
+          "MacroRec": 0.2635891074487566,
+          "AUC_ovr": 0.622629903486336,
+          "Agreement": 0.8175675675675675
+        },
+        {
+          "Method": "ls_poly_5",
+          "Split": "test",
+          "ACC": 0.34932126696832577,
+          "MacroF1": 0.2668203533414548,
+          "MacroPrec": 0.3573996441657531,
+          "MacroRec": 0.2933252331143341,
+          "AUC_ovr": 0.6635682607502174,
+          "Agreement": 0.8371040723981901
+        },
+        {
+          "Method": "ls_poly_7",
+          "Split": "fit",
+          "ACC": 0.3141891891891892,
+          "MacroF1": 0.2599979140592407,
+          "MacroPrec": 0.3164173228346457,
+          "MacroRec": 0.2686476291739449,
+          "AUC_ovr": 0.6229292103129078,
+          "Agreement": 0.8682432432432432
+        },
+        {
+          "Method": "ls_poly_7",
+          "Split": "test",
+          "ACC": 0.35203619909502265,
+          "MacroF1": 0.2803763989179826,
+          "MacroPrec": 0.34284315692516054,
+          "MacroRec": 0.2995782685714078,
+          "AUC_ovr": 0.6628698203227406,
+          "Agreement": 0.885972850678733
+        },
+        {
+          "Method": "remez_2",
+          "Split": "fit",
+          "ACC": 0.32094594594594594,
+          "MacroF1": 0.26077457633235224,
+          "MacroPrec": 0.3344669278711832,
+          "MacroRec": 0.27112478165109744,
+          "AUC_ovr": 0.6232688641873765,
+          "Agreement": 0.8074324324324325
+        },
+        {
+          "Method": "remez_2",
+          "Split": "test",
+          "ACC": 0.3502262443438914,
+          "MacroF1": 0.2641751343072759,
+          "MacroPrec": 0.36072978974236786,
+          "MacroRec": 0.292904276709124,
+          "AUC_ovr": 0.6644780226665135,
+          "Agreement": 0.818552036199095
+        },
+        {
+          "Method": "remez_3",
+          "Split": "fit",
+          "ACC": 0.32094594594594594,
+          "MacroF1": 0.26077457633235224,
+          "MacroPrec": 0.3344669278711832,
+          "MacroRec": 0.27112478165109744,
+          "AUC_ovr": 0.6235555146670333,
+          "Agreement": 0.8074324324324325
+        },
+        {
+          "Method": "remez_3",
+          "Split": "test",
+          "ACC": 0.3506787330316742,
+          "MacroF1": 0.2671934406371016,
+          "MacroPrec": 0.35977914611785633,
+          "MacroRec": 0.29413370876416056,
+          "AUC_ovr": 0.664473454687976,
+          "Agreement": 0.8235294117647058
+        },
+        {
+          "Method": "remez_5",
+          "Split": "fit",
+          "ACC": 0.3141891891891892,
+          "MacroF1": 0.2679408466799615,
+          "MacroPrec": 0.29315830115830116,
+          "MacroRec": 0.27682463735095314,
+          "AUC_ovr": 0.6228852991200622,
+          "Agreement": 0.8648648648648649
+        },
+        {
+          "Method": "remez_5",
+          "Split": "test",
+          "ACC": 0.34479638009049773,
+          "MacroF1": 0.28718944270114627,
+          "MacroPrec": 0.3315072914767578,
+          "MacroRec": 0.2991834691082941,
+          "AUC_ovr": 0.6634324730175457,
+          "Agreement": 0.9027149321266968
+        },
+        {
+          "Method": "remez_7",
+          "Split": "fit",
+          "ACC": 0.30405405405405406,
+          "MacroF1": 0.27156276871176727,
+          "MacroPrec": 0.28456364180892485,
+          "MacroRec": 0.27818367467490274,
+          "AUC_ovr": 0.623279143370596,
+          "Agreement": 0.8885135135135135
+        },
+        {
+          "Method": "remez_7",
+          "Split": "test",
+          "ACC": 0.34796380090497736,
+          "MacroF1": 0.29806288273590564,
+          "MacroPrec": 0.33298407859186746,
+          "MacroRec": 0.30538842791876963,
+          "AUC_ovr": 0.6618964762406232,
+          "Agreement": 0.9262443438914028
+        },
+        {
+          "Method": "ola",
+          "Split": "fit",
+          "ACC": 0.2939189189189189,
+          "MacroF1": 0.25843032950751055,
+          "MacroPrec": 0.27779056230420157,
+          "MacroRec": 0.26272731492029733,
+          "AUC_ovr": 0.6257508331170822,
+          "Agreement": 0.9662162162162162
+        },
+        {
+          "Method": "ola",
+          "Split": "test",
+          "ACC": 0.34751131221719456,
+          "MacroF1": 0.2983898704778368,
+          "MacroPrec": 0.3398678953190151,
+          "MacroRec": 0.3046054171144512,
+          "AUC_ovr": 0.659899386339357,
+          "Agreement": 0.9814479638009049
+        },
+        {
+          "Method": "precise_a11",
+          "Split": "fit",
+          "ACC": 0.30405405405405406,
+          "MacroF1": 0.2674144141716298,
+          "MacroPrec": 0.29236186510002227,
+          "MacroRec": 0.27136528189159764,
+          "AUC_ovr": 0.6244958310577293,
+          "Agreement": 1.0
+        },
+        {
+          "Method": "precise_a11",
+          "Split": "test",
+          "ACC": 0.34705882352941175,
+          "MacroF1": 0.2976088916012694,
+          "MacroPrec": 0.3366350059561445,
+          "MacroRec": 0.3043198815866276,
+          "AUC_ovr": 0.6595995583361927,
+          "Agreement": 0.9995475113122172
+        }
+      ],
+      "report_vs_pseudo_labels_records": [
+        {
+          "Method": "Original",
+          "Split": "fit",
+          "ACC": 1.0,
+          "MacroF1": 1.0,
+          "MacroPrec": 1.0,
+          "MacroRec": 1.0,
+          "AUC_ovr": 0.9622607001777203,
+          "Agreement": 1.0
+        },
+        {
+          "Method": "Original",
+          "Split": "test",
+          "ACC": 1.0,
+          "MacroF1": 1.0,
+          "MacroPrec": 1.0,
+          "MacroRec": 1.0,
+          "AUC_ovr": 0.9686247815073761,
+          "Agreement": 1.0
+        },
+        {
+          "Method": "Quad4FHE",
+          "Split": "fit",
+          "ACC": 0.8817567567567568,
+          "MacroF1": 0.8521490586060663,
+          "MacroPrec": 0.8607194390222356,
+          "MacroRec": 0.8498987382563644,
+          "AUC_ovr": 0.9508053072042408,
+          "Agreement": 0.8817567567567568
+        },
+        {
+          "Method": "Quad4FHE",
+          "Split": "test",
+          "ACC": 0.918552036199095,
+          "MacroF1": 0.8889297826375294,
+          "MacroPrec": 0.8982629220536154,
+          "MacroRec": 0.8822923402012064,
+          "AUC_ovr": 0.9570907828896356,
+          "Agreement": 0.918552036199095
+        },
+        {
+          "Method": "square",
+          "Split": "fit",
+          "ACC": 0.4864864864864865,
+          "MacroF1": 0.38611418172650014,
+          "MacroPrec": 0.4676546816329525,
+          "MacroRec": 0.36466789370615504,
+          "AUC_ovr": 0.6989678903210694,
+          "Agreement": 0.4864864864864865
+        },
+        {
+          "Method": "square",
+          "Split": "test",
+          "ACC": 0.5416289592760181,
+          "MacroF1": 0.40413138143137656,
+          "MacroPrec": 0.4854907877756725,
+          "MacroRec": 0.3961047041244058,
+          "AUC_ovr": 0.7306013419161289,
+          "Agreement": 0.5416289592760181
+        },
+        {
+          "Method": "ls_poly_2",
+          "Split": "fit",
+          "ACC": 0.7263513513513513,
+          "MacroF1": 0.5668605130385663,
+          "MacroPrec": 0.8556895908469097,
+          "MacroRec": 0.5370091222329639,
+          "AUC_ovr": 0.956123179093107,
+          "Agreement": 0.7263513513513513
+        },
+        {
+          "Method": "ls_poly_2",
+          "Split": "test",
+          "ACC": 0.7552036199095022,
+          "MacroF1": 0.5704441929653659,
+          "MacroPrec": 0.8663776828077554,
+          "MacroRec": 0.5240393962873091,
+          "AUC_ovr": 0.9579372796697578,
+          "Agreement": 0.7552036199095022
+        },
+        {
+          "Method": "ls_poly_3",
+          "Split": "fit",
+          "ACC": 0.7331081081081081,
+          "MacroF1": 0.5843465199855684,
+          "MacroPrec": 0.8597266785502079,
+          "MacroRec": 0.5500343323169976,
+          "AUC_ovr": 0.9564705730603273,
+          "Agreement": 0.7331081081081081
+        },
+        {
+          "Method": "ls_poly_3",
+          "Split": "test",
+          "ACC": 0.7601809954751131,
+          "MacroF1": 0.5823806136024823,
+          "MacroPrec": 0.865290226184013,
+          "MacroRec": 0.5336413100653465,
+          "AUC_ovr": 0.9582763115967412,
+          "Agreement": 0.7601809954751131
+        },
+        {
+          "Method": "ls_poly_5",
+          "Split": "fit",
+          "ACC": 0.8175675675675675,
+          "MacroF1": 0.7712838024098527,
+          "MacroPrec": 0.8810821786908744,
+          "MacroRec": 0.7176059715921768,
+          "AUC_ovr": 0.9595040687306391,
+          "Agreement": 0.8175675675675675
+        },
+        {
+          "Method": "ls_poly_5",
+          "Split": "test",
+          "ACC": 0.8371040723981901,
+          "MacroF1": 0.745072822584647,
+          "MacroPrec": 0.8846929494347222,
+          "MacroRec": 0.6851241956818261,
+          "AUC_ovr": 0.9632340327980733,
+          "Agreement": 0.8371040723981901
+        },
+        {
+          "Method": "ls_poly_7",
+          "Split": "fit",
+          "ACC": 0.8682432432432432,
+          "MacroF1": 0.823460591133005,
+          "MacroPrec": 0.9025200397247641,
+          "MacroRec": 0.7768422944398999,
+          "AUC_ovr": 0.96077635041413,
+          "Agreement": 0.8682432432432432
+        },
+        {
+          "Method": "ls_poly_7",
+          "Split": "test",
+          "ACC": 0.885972850678733,
+          "MacroF1": 0.8345359637348773,
+          "MacroPrec": 0.9127382094513076,
+          "MacroRec": 0.7858319208850671,
+          "AUC_ovr": 0.9654302575116269,
+          "Agreement": 0.885972850678733
+        },
+        {
+          "Method": "remez_2",
+          "Split": "fit",
+          "ACC": 0.8074324324324325,
+          "MacroF1": 0.7619610438807921,
+          "MacroPrec": 0.8747309428160491,
+          "MacroRec": 0.7067884410401329,
+          "AUC_ovr": 0.9565778926118703,
+          "Agreement": 0.8074324324324325
+        },
+        {
+          "Method": "remez_2",
+          "Split": "test",
+          "ACC": 0.818552036199095,
+          "MacroF1": 0.7146310546553015,
+          "MacroPrec": 0.8665591888242868,
+          "MacroRec": 0.6553312015517772,
+          "AUC_ovr": 0.9587258119140808,
+          "Agreement": 0.818552036199095
+        },
+        {
+          "Method": "remez_3",
+          "Split": "fit",
+          "ACC": 0.8074324324324325,
+          "MacroF1": 0.7619610438807921,
+          "MacroPrec": 0.8747309428160491,
+          "MacroRec": 0.7067884410401329,
+          "AUC_ovr": 0.9568372287043816,
+          "Agreement": 0.8074324324324325
+        },
+        {
+          "Method": "remez_3",
+          "Split": "test",
+          "ACC": 0.8235294117647058,
+          "MacroF1": 0.7270368445066436,
+          "MacroPrec": 0.8686030008364035,
+          "MacroRec": 0.667966456818435,
+          "AUC_ovr": 0.9590109720786968,
+          "Agreement": 0.8235294117647058
+        },
+        {
+          "Method": "remez_5",
+          "Split": "fit",
+          "ACC": 0.8648648648648649,
+          "MacroF1": 0.8353314691112066,
+          "MacroPrec": 0.850867438867439,
+          "MacroRec": 0.8226336109665106,
+          "AUC_ovr": 0.9592288315987421,
+          "Agreement": 0.8648648648648649
+        },
+        {
+          "Method": "remez_5",
+          "Split": "test",
+          "ACC": 0.9027149321266968,
+          "MacroF1": 0.8722581735474618,
+          "MacroPrec": 0.8962129071599259,
+          "MacroRec": 0.852342969289752,
+          "AUC_ovr": 0.9638156201037915,
+          "Agreement": 0.9027149321266968
+        },
+        {
+          "Method": "remez_7",
+          "Split": "fit",
+          "ACC": 0.8885135135135135,
+          "MacroF1": 0.861045420941332,
+          "MacroPrec": 0.8404887690925428,
+          "MacroRec": 0.8876564165489205,
+          "AUC_ovr": 0.959907754220531,
+          "Agreement": 0.8885135135135135
+        },
+        {
+          "Method": "remez_7",
+          "Split": "test",
+          "ACC": 0.9262443438914028,
+          "MacroF1": 0.9031950732299521,
+          "MacroPrec": 0.8982131060270859,
+          "MacroRec": 0.9095057986814614,
+          "AUC_ovr": 0.9657523468745985,
+          "Agreement": 0.9262443438914028
+        },
+        {
+          "Method": "ola",
+          "Split": "fit",
+          "ACC": 0.9662162162162162,
+          "MacroF1": 0.9623173938498434,
+          "MacroPrec": 0.9530228390473378,
+          "MacroRec": 0.9725457970798939,
+          "AUC_ovr": 0.9624207513316818,
+          "Agreement": 0.9662162162162162
+        },
+        {
+          "Method": "ola",
+          "Split": "test",
+          "ACC": 0.9814479638009049,
+          "MacroF1": 0.9756749726372702,
+          "MacroPrec": 0.9781844793348526,
+          "MacroRec": 0.9732162102133607,
+          "AUC_ovr": 0.9671482506863706,
+          "Agreement": 0.9814479638009049
+        },
+        {
+          "Method": "precise_a11",
+          "Split": "fit",
+          "ACC": 1.0,
+          "MacroF1": 1.0,
+          "MacroPrec": 1.0,
+          "MacroRec": 1.0,
+          "AUC_ovr": 0.9623433209523193,
+          "Agreement": 1.0
+        },
+        {
+          "Method": "precise_a11",
+          "Split": "test",
+          "ACC": 0.9995475113122172,
+          "MacroF1": 0.9993490622774515,
+          "MacroPrec": 0.9989304812834223,
+          "MacroRec": 0.9997706422018349,
+          "AUC_ovr": 0.9686263493606588,
+          "Agreement": 0.9995475113122172
+        }
+      ],
+      "pool": "05%"
+    },
+    {
+      "key": "pool=10%",
+      "hidden_dim": 256,
+      "pool_fraction": 0.1,
+      "rep_fit_size": 592,
+      "original": {
+        "test_top1_acc": 0.34705882352941175,
+        "test_top5_acc": null
+      },
+      "quad4fhe": {
+        "alpha": 0.12710637742975653,
+        "beta": 0.3493391391741841,
+        "eta": 0.12745905764799245,
+        "threshold": null,
+        "zero_threshold_realized": null,
+        "method_used": "soft(C=100.0)",
+        "hard_feasible": false,
+        "empirical_margin": -3.2226395851869607,
+        "normalized_margin": -0.1610983200547392,
+        "quant_decimals": 0,
+        "constraint_version": "multiclass_bias_free_dL_v1",
+        "he_artifact_dir": "he_artifacts_sst5_pool_10",
+        "calib_n": 592,
+        "calib_agreement": 0.9307432432432432,
+        "calib_mismatch_count": 41,
+        "exact_preserved_on_calib": false,
+        "test_n": 2210,
+        "test_agreement": 0.9190045248868778,
+        "test_mismatch_count": 179,
+        "calib_test_agreement_gap": 0.011738718356365418,
+        "test_top1_acc": 0.34660633484162895,
+        "test_top5_acc": null,
+        "test_macro_f1": 0.29087310689017587,
+        "solver_diagnostics": {
+          "num_pairwise_constraints": 2368,
+          "min_pairwise_margin": -3.2226395851869607,
+          "normalized_min_pairwise_margin": -0.1610983200547392,
+          "calib_agreement": 0.9307432432432432,
+          "calib_mismatch_count": 41,
+          "exact_preserved": false,
+          "slack_positive_count": 108,
+          "sum_slack": 104.92591996373014,
+          "mean_slack": 0.17723972966846308,
+          "max_slack": 4.222639585186961,
+          "pairwise_slack_positive_count": 129,
+          "pairwise_sum_slack": 120.89917913731708,
+          "pairwise_max_slack": 4.222639585186961,
+          "soft_C_grid": [
+            0.001,
+            0.01,
+            0.1,
+            1.0,
+            10.0,
+            100.0
+          ],
+          "selected_C": 100.0,
+          "soft_trace": [
+            {
+              "C": 0.001,
+              "objective": 1.004497774070376,
+              "calib_agreement": 0.9070945945945946,
+              "calib_mismatch_count": 55,
+              "min_pairwise_margin": -0.2860787108126882,
+              "sum_slack": 437.00719589883806,
+              "max_slack": 1.286078710812688,
+              "slack_positive_count": 579
+            },
+            {
+              "C": 0.01,
+              "objective": 3.734949318254369,
+              "calib_agreement": 0.8885135135135135,
+              "calib_mismatch_count": 66,
+              "min_pairwise_margin": -0.66655938939307,
+              "sum_slack": 255.97322649217858,
+              "max_slack": 1.6665593893930701,
+              "slack_positive_count": 400
+            },
+            {
+              "C": 0.1,
+              "objective": 21.620359098253974,
+              "calib_agreement": 0.8885135135135135,
+              "calib_mismatch_count": 66,
+              "min_pairwise_margin": -1.2869167887753197,
+              "sum_slack": 181.16574313984864,
+              "max_slack": 2.2869167887753195,
+              "slack_positive_count": 249
+            },
+            {
+              "C": 1.0,
+              "objective": 154.74528934044022,
+              "calib_agreement": 0.9155405405405406,
+              "calib_mismatch_count": 50,
+              "min_pairwise_margin": -1.9981045125327,
+              "sum_slack": 133.43958529213205,
+              "max_slack": 2.9981045125327,
+              "slack_positive_count": 174
+            },
+            {
+              "C": 10.0,
+              "objective": 1189.2168097621204,
+              "calib_agreement": 0.9256756756756757,
+              "calib_mismatch_count": 44,
+              "min_pairwise_margin": -2.6311816716257317,
+              "sum_slack": 109.70522494020173,
+              "max_slack": 3.6311816716257317,
+              "slack_positive_count": 128
+            },
+            {
+              "C": 100.0,
+              "objective": 10692.675579419449,
+              "calib_agreement": 0.9307432432432432,
+              "calib_mismatch_count": 41,
+              "min_pairwise_margin": -3.2226395851869607,
+              "sum_slack": 104.92591996373014,
+              "max_slack": 4.222639585186961,
+              "slack_positive_count": 108
+            }
+          ],
+          "regime": "soft(C=100.0)",
+          "constraint_version": "multiclass_bias_free_dL_v1",
+          "fit_exact_preserved": false,
+          "fit_mismatch_count": 41,
+          "fit_agreement": 0.9307432432432432
+        },
+        "num_pairwise_constraints": 2368,
+        "min_pairwise_margin": -3.2226395851869607,
+        "normalized_min_pairwise_margin": -0.1610983200547392,
+        "slack_positive_count": 108,
+        "sum_slack": 104.92591996373014,
+        "mean_slack": 0.17723972966846308,
+        "max_slack": 4.222639585186961,
+        "pairwise_slack_positive_count": 129,
+        "pairwise_sum_slack": 120.89917913731708,
+        "pairwise_mean_slack": null,
+        "pairwise_max_slack": 4.222639585186961,
+        "selected_C": 100.0,
+        "soft_C_grid": [
+          0.001,
+          0.01,
+          0.1,
+          1.0,
+          10.0,
+          100.0
+        ],
+        "soft_trace": [
+          {
+            "C": 0.001,
+            "objective": 1.004497774070376,
+            "calib_agreement": 0.9070945945945946,
+            "calib_mismatch_count": 55,
+            "min_pairwise_margin": -0.2860787108126882,
+            "sum_slack": 437.00719589883806,
+            "max_slack": 1.286078710812688,
+            "slack_positive_count": 579
+          },
+          {
+            "C": 0.01,
+            "objective": 3.734949318254369,
+            "calib_agreement": 0.8885135135135135,
+            "calib_mismatch_count": 66,
+            "min_pairwise_margin": -0.66655938939307,
+            "sum_slack": 255.97322649217858,
+            "max_slack": 1.6665593893930701,
+            "slack_positive_count": 400
+          },
+          {
+            "C": 0.1,
+            "objective": 21.620359098253974,
+            "calib_agreement": 0.8885135135135135,
+            "calib_mismatch_count": 66,
+            "min_pairwise_margin": -1.2869167887753197,
+            "sum_slack": 181.16574313984864,
+            "max_slack": 2.2869167887753195,
+            "slack_positive_count": 249
+          },
+          {
+            "C": 1.0,
+            "objective": 154.74528934044022,
+            "calib_agreement": 0.9155405405405406,
+            "calib_mismatch_count": 50,
+            "min_pairwise_margin": -1.9981045125327,
+            "sum_slack": 133.43958529213205,
+            "max_slack": 2.9981045125327,
+            "slack_positive_count": 174
+          },
+          {
+            "C": 10.0,
+            "objective": 1189.2168097621204,
+            "calib_agreement": 0.9256756756756757,
+            "calib_mismatch_count": 44,
+            "min_pairwise_margin": -2.6311816716257317,
+            "sum_slack": 109.70522494020173,
+            "max_slack": 3.6311816716257317,
+            "slack_positive_count": 128
+          },
+          {
+            "C": 100.0,
+            "objective": 10692.675579419449,
+            "calib_agreement": 0.9307432432432432,
+            "calib_mismatch_count": 41,
+            "min_pairwise_margin": -3.2226395851869607,
+            "sum_slack": 104.92591996373014,
+            "max_slack": 4.222639585186961,
+            "slack_positive_count": 108
+          }
+        ],
+        "selected_mu": null,
+        "mu_grid": null,
+        "mu_p": null,
+        "mu_n": null
+      },
+      "report_vs_ground_truth_test": {
+        "Original": {
+          "ACC": 0.34705882352941175,
+          "MacroF1": 0.2975988552473062,
+          "MacroPrec": 0.3367820188901291,
+          "MacroRec": 0.3043198815866276,
+          "AUC_ovr": 0.6595925928831745,
+          "Agreement": 1.0
+        },
+        "Quad4FHE": {
+          "ACC": 0.34660633484162895,
+          "MacroF1": 0.29087310689017587,
+          "MacroPrec": 0.3300059904349644,
+          "MacroRec": 0.3012810307007019,
+          "AUC_ovr": 0.6615528432790143,
+          "Agreement": 0.9190045248868778
+        },
+        "square": {
+          "ACC": 0.2737556561085973,
+          "MacroF1": 0.2040155016071267,
+          "MacroPrec": 0.2593664027730015,
+          "MacroRec": 0.22792235079292422,
+          "AUC_ovr": 0.5662748935101186,
+          "Agreement": 0.5416289592760181
+        },
+        "ls_poly_2": {
+          "ACC": 0.34570135746606334,
+          "MacroF1": 0.22866933230847422,
+          "MacroPrec": 0.4002182679573984,
+          "MacroRec": 0.28119720455990876,
+          "AUC_ovr": 0.6635263964092656,
+          "Agreement": 0.7384615384615385
+        },
+        "ls_poly_3": {
+          "ACC": 0.34886877828054297,
+          "MacroF1": 0.24305573895571647,
+          "MacroPrec": 0.41672718861831665,
+          "MacroRec": 0.28614275070621975,
+          "AUC_ovr": 0.6638224383361047,
+          "Agreement": 0.7574660633484163
+        },
+        "ls_poly_5": {
+          "ACC": 0.34796380090497736,
+          "MacroF1": 0.26601113106957175,
+          "MacroPrec": 0.35316352509924087,
+          "MacroRec": 0.29230116471920353,
+          "AUC_ovr": 0.6638031414194391,
+          "Agreement": 0.8371040723981901
+        },
+        "ls_poly_7": {
+          "ACC": 0.351131221719457,
+          "MacroF1": 0.2797369037597109,
+          "MacroPrec": 0.3404603477266213,
+          "MacroRec": 0.29879395484591764,
+          "AUC_ovr": 0.6630630782759669,
+          "Agreement": 0.885972850678733
+        },
+        "remez_2": {
+          "ACC": 0.35203619909502265,
+          "MacroF1": 0.2587955606690106,
+          "MacroPrec": 0.370659776462419,
+          "MacroRec": 0.29230385287300964,
+          "AUC_ovr": 0.6644759152886589,
+          "Agreement": 0.8004524886877828
+        },
+        "remez_3": {
+          "ACC": 0.3502262443438914,
+          "MacroF1": 0.26478414460209565,
+          "MacroPrec": 0.3615772934837739,
+          "MacroRec": 0.2930262586638596,
+          "AUC_ovr": 0.6645644995317461,
+          "Agreement": 0.8158371040723982
+        },
+        "remez_5": {
+          "ACC": 0.34570135746606334,
+          "MacroF1": 0.287236167380831,
+          "MacroPrec": 0.3337637945235977,
+          "MacroRec": 0.2996733891970579,
+          "AUC_ovr": 0.6636274518575407,
+          "Agreement": 0.8986425339366516
+        },
+        "remez_7": {
+          "ACC": 0.34796380090497736,
+          "MacroF1": 0.29791958646224914,
+          "MacroPrec": 0.3334447631508072,
+          "MacroRec": 0.30543173384178735,
+          "AUC_ovr": 0.6621004698665002,
+          "Agreement": 0.9239819004524887
+        },
+        "ola": {
+          "ACC": 0.34615384615384615,
+          "MacroF1": 0.2967353362158317,
+          "MacroPrec": 0.3381558116949222,
+          "MacroRec": 0.3031978683013933,
+          "AUC_ovr": 0.6599457261479121,
+          "Agreement": 0.9809954751131221
+        },
+        "precise_a11": {
+          "ACC": 0.34705882352941175,
+          "MacroF1": 0.2976088916012694,
+          "MacroPrec": 0.3366350059561445,
+          "MacroRec": 0.3043198815866276,
+          "AUC_ovr": 0.6596056484236971,
+          "Agreement": 0.9995475113122172
+        }
+      },
+      "report_vs_pseudo_labels_test": {
+        "Original": {
+          "ACC": 1.0,
+          "MacroF1": 1.0,
+          "MacroPrec": 1.0,
+          "MacroRec": 1.0,
+          "AUC_ovr": 0.9686247815073761,
+          "Agreement": 1.0
+        },
+        "Quad4FHE": {
+          "ACC": 0.9190045248868778,
+          "MacroF1": 0.8898980745731582,
+          "MacroPrec": 0.9015331143060482,
+          "MacroRec": 0.8809959335564252,
+          "AUC_ovr": 0.957100482993904,
+          "Agreement": 0.9190045248868778
+        },
+        "square": {
+          "ACC": 0.5416289592760181,
+          "MacroF1": 0.40413138143137656,
+          "MacroPrec": 0.4854907877756725,
+          "MacroRec": 0.3961047041244058,
+          "AUC_ovr": 0.7306013419161289,
+          "Agreement": 0.5416289592760181
+        },
+        "ls_poly_2": {
+          "ACC": 0.7384615384615385,
+          "MacroF1": 0.5401565799412378,
+          "MacroPrec": 0.862722907416002,
+          "MacroRec": 0.498476426407335,
+          "AUC_ovr": 0.9567429208409187,
+          "Agreement": 0.7384615384615385
+        },
+        "ls_poly_3": {
+          "ACC": 0.7574660633484163,
+          "MacroF1": 0.5808344906683247,
+          "MacroPrec": 0.8592995547330646,
+          "MacroRec": 0.5326766971535651,
+          "AUC_ovr": 0.9584698073057065,
+          "Agreement": 0.7574660633484163
+        },
+        "ls_poly_5": {
+          "ACC": 0.8371040723981901,
+          "MacroF1": 0.7474299758917605,
+          "MacroPrec": 0.8812591409186303,
+          "MacroRec": 0.6882342898132645,
+          "AUC_ovr": 0.9635168853560148,
+          "Agreement": 0.8371040723981901
+        },
+        "ls_poly_7": {
+          "ACC": 0.885972850678733,
+          "MacroF1": 0.8352742120628733,
+          "MacroPrec": 0.9106938927704258,
+          "MacroRec": 0.7877268946627399,
+          "AUC_ovr": 0.9657018254413259,
+          "Agreement": 0.885972850678733
+        },
+        "remez_2": {
+          "ACC": 0.8004524886877828,
+          "MacroF1": 0.6773528856794576,
+          "MacroPrec": 0.8635221470145851,
+          "MacroRec": 0.6183408489880294,
+          "AUC_ovr": 0.9576060422820538,
+          "Agreement": 0.8004524886877828
+        },
+        "remez_3": {
+          "ACC": 0.8158371040723982,
+          "MacroF1": 0.7113018055452283,
+          "MacroPrec": 0.8607490417487444,
+          "MacroRec": 0.6530912827532844,
+          "AUC_ovr": 0.9588026987986333,
+          "Agreement": 0.8158371040723982
+        },
+        "remez_5": {
+          "ACC": 0.8986425339366516,
+          "MacroF1": 0.8662958343848347,
+          "MacroPrec": 0.8945826861544072,
+          "MacroRec": 0.8432292169342223,
+          "AUC_ovr": 0.9636478304862637,
+          "Agreement": 0.8986425339366516
+        },
+        "remez_7": {
+          "ACC": 0.9239819004524887,
+          "MacroF1": 0.9013742730778672,
+          "MacroPrec": 0.8972017193438745,
+          "MacroRec": 0.9067502164501235,
+          "AUC_ovr": 0.9657026086685649,
+          "Agreement": 0.9239819004524887
+        },
+        "ola": {
+          "ACC": 0.9809954751131221,
+          "MacroF1": 0.9751109651779141,
+          "MacroPrec": 0.9790176591090682,
+          "MacroRec": 0.9712950303771171,
+          "AUC_ovr": 0.9675191229233505,
+          "Agreement": 0.9809954751131221
+        },
+        "precise_a11": {
+          "ACC": 0.9995475113122172,
+          "MacroF1": 0.9993490622774515,
+          "MacroPrec": 0.9989304812834223,
+          "MacroRec": 0.9997706422018349,
+          "AUC_ovr": 0.9686265027654022,
+          "Agreement": 0.9995475113122172
+        }
+      },
+      "report_vs_ground_truth_records": [
+        {
+          "Method": "Original",
+          "Split": "fit",
+          "ACC": 0.3108108108108108,
+          "MacroF1": 0.253284831259779,
+          "MacroPrec": 0.2866571933203478,
+          "MacroRec": 0.2654307806198892,
+          "AUC_ovr": 0.6156806272591401,
+          "Agreement": 1.0
+        },
+        {
+          "Method": "Original",
+          "Split": "test",
+          "ACC": 0.34705882352941175,
+          "MacroF1": 0.2975988552473062,
+          "MacroPrec": 0.3367820188901291,
+          "MacroRec": 0.3043198815866276,
+          "AUC_ovr": 0.6595925928831745,
+          "Agreement": 1.0
+        },
+        {
+          "Method": "Quad4FHE",
+          "Split": "fit",
+          "ACC": 0.3108108108108108,
+          "MacroF1": 0.25202193287106445,
+          "MacroPrec": 0.2836423026640418,
+          "MacroRec": 0.2658460975683869,
+          "AUC_ovr": 0.6173489328405906,
+          "Agreement": 0.9307432432432432
+        },
+        {
+          "Method": "Quad4FHE",
+          "Split": "test",
+          "ACC": 0.34660633484162895,
+          "MacroF1": 0.29087310689017587,
+          "MacroPrec": 0.3300059904349644,
+          "MacroRec": 0.3012810307007019,
+          "AUC_ovr": 0.6615528432790143,
+          "Agreement": 0.9190045248868778
+        },
+        {
+          "Method": "square",
+          "Split": "fit",
+          "ACC": 0.25,
+          "MacroF1": 0.2025786192674271,
+          "MacroPrec": 0.2645647533544656,
+          "MacroRec": 0.2097671274936464,
+          "AUC_ovr": 0.5300072366337408,
+          "Agreement": 0.5304054054054054
+        },
+        {
+          "Method": "square",
+          "Split": "test",
+          "ACC": 0.2737556561085973,
+          "MacroF1": 0.2040155016071267,
+          "MacroPrec": 0.2593664027730015,
+          "MacroRec": 0.22792235079292422,
+          "AUC_ovr": 0.5662748935101186,
+          "Agreement": 0.5416289592760181
+        },
+        {
+          "Method": "ls_poly_2",
+          "Split": "fit",
+          "ACC": 0.3108108108108108,
+          "MacroF1": 0.21549268161851107,
+          "MacroPrec": 0.376506985766664,
+          "MacroRec": 0.24744905770443784,
+          "AUC_ovr": 0.6211897162637185,
+          "Agreement": 0.7702702702702703
+        },
+        {
+          "Method": "ls_poly_2",
+          "Split": "test",
+          "ACC": 0.34570135746606334,
+          "MacroF1": 0.22866933230847422,
+          "MacroPrec": 0.4002182679573984,
+          "MacroRec": 0.28119720455990876,
+          "AUC_ovr": 0.6635263964092656,
+          "Agreement": 0.7384615384615385
+        },
+        {
+          "Method": "ls_poly_3",
+          "Split": "fit",
+          "ACC": 0.3158783783783784,
+          "MacroF1": 0.22113189819756168,
+          "MacroPrec": 0.3473943872219734,
+          "MacroRec": 0.2522936513130764,
+          "AUC_ovr": 0.6217036510078418,
+          "Agreement": 0.777027027027027
+        },
+        {
+          "Method": "ls_poly_3",
+          "Split": "test",
+          "ACC": 0.34886877828054297,
+          "MacroF1": 0.24305573895571647,
+          "MacroPrec": 0.41672718861831665,
+          "MacroRec": 0.28614275070621975,
+          "AUC_ovr": 0.6638224383361047,
+          "Agreement": 0.7574660633484163
+        },
+        {
+          "Method": "ls_poly_5",
+          "Split": "fit",
+          "ACC": 0.3158783783783784,
+          "MacroF1": 0.23985401837183323,
+          "MacroPrec": 0.3254724884864231,
+          "MacroRec": 0.25999505052323035,
+          "AUC_ovr": 0.6208373802672353,
+          "Agreement": 0.8445945945945946
+        },
+        {
+          "Method": "ls_poly_5",
+          "Split": "test",
+          "ACC": 0.34796380090497736,
+          "MacroF1": 0.26601113106957175,
+          "MacroPrec": 0.35316352509924087,
+          "MacroRec": 0.29230116471920353,
+          "AUC_ovr": 0.6638031414194391,
+          "Agreement": 0.8371040723981901
+        },
+        {
+          "Method": "ls_poly_7",
+          "Split": "fit",
+          "ACC": 0.3158783783783784,
+          "MacroF1": 0.2470605648319934,
+          "MacroPrec": 0.30119230210139303,
+          "MacroRec": 0.2641278010165085,
+          "AUC_ovr": 0.6193376195625142,
+          "Agreement": 0.9054054054054054
+        },
+        {
+          "Method": "ls_poly_7",
+          "Split": "test",
+          "ACC": 0.351131221719457,
+          "MacroF1": 0.2797369037597109,
+          "MacroPrec": 0.3404603477266213,
+          "MacroRec": 0.29879395484591764,
+          "AUC_ovr": 0.6630630782759669,
+          "Agreement": 0.885972850678733
+        },
+        {
+          "Method": "remez_2",
+          "Split": "fit",
+          "ACC": 0.31925675675675674,
+          "MacroF1": 0.23468822733032108,
+          "MacroPrec": 0.3401401286111911,
+          "MacroRec": 0.259351727066033,
+          "AUC_ovr": 0.6222836191853993,
+          "Agreement": 0.8141891891891891
+        },
+        {
+          "Method": "remez_2",
+          "Split": "test",
+          "ACC": 0.35203619909502265,
+          "MacroF1": 0.2587955606690106,
+          "MacroPrec": 0.370659776462419,
+          "MacroRec": 0.29230385287300964,
+          "AUC_ovr": 0.6644759152886589,
+          "Agreement": 0.8004524886877828
+        },
+        {
+          "Method": "remez_3",
+          "Split": "fit",
+          "ACC": 0.31925675675675674,
+          "MacroF1": 0.24106982247707762,
+          "MacroPrec": 0.32612161003164464,
+          "MacroRec": 0.26242305729906323,
+          "AUC_ovr": 0.6222492813788646,
+          "Agreement": 0.8361486486486487
+        },
+        {
+          "Method": "remez_3",
+          "Split": "test",
+          "ACC": 0.3502262443438914,
+          "MacroF1": 0.26478414460209565,
+          "MacroPrec": 0.3615772934837739,
+          "MacroRec": 0.2930262586638596,
+          "AUC_ovr": 0.6645644995317461,
+          "Agreement": 0.8158371040723982
+        },
+        {
+          "Method": "remez_5",
+          "Split": "fit",
+          "ACC": 0.31925675675675674,
+          "MacroF1": 0.25546899469553097,
+          "MacroPrec": 0.29657742311658525,
+          "MacroRec": 0.2706114694962302,
+          "AUC_ovr": 0.6204160682360974,
+          "Agreement": 0.910472972972973
+        },
+        {
+          "Method": "remez_5",
+          "Split": "test",
+          "ACC": 0.34570135746606334,
+          "MacroF1": 0.287236167380831,
+          "MacroPrec": 0.3337637945235977,
+          "MacroRec": 0.2996733891970579,
+          "AUC_ovr": 0.6636274518575407,
+          "Agreement": 0.8986425339366516
+        },
+        {
+          "Method": "remez_7",
+          "Split": "fit",
+          "ACC": 0.30743243243243246,
+          "MacroF1": 0.25196428571428575,
+          "MacroPrec": 0.27738313499806033,
+          "MacroRec": 0.264197184683519,
+          "AUC_ovr": 0.6186964879113368,
+          "Agreement": 0.9307432432432432
+        },
+        {
+          "Method": "remez_7",
+          "Split": "test",
+          "ACC": 0.34796380090497736,
+          "MacroF1": 0.29791958646224914,
+          "MacroPrec": 0.3334447631508072,
+          "MacroRec": 0.30543173384178735,
+          "AUC_ovr": 0.6621004698665002,
+          "Agreement": 0.9239819004524887
+        },
+        {
+          "Method": "ola",
+          "Split": "fit",
+          "ACC": 0.30236486486486486,
+          "MacroF1": 0.24809264336400466,
+          "MacroPrec": 0.278982683982684,
+          "MacroRec": 0.2591066699479524,
+          "AUC_ovr": 0.6154809399838064,
+          "Agreement": 0.9864864864864865
+        },
+        {
+          "Method": "ola",
+          "Split": "test",
+          "ACC": 0.34615384615384615,
+          "MacroF1": 0.2967353362158317,
+          "MacroPrec": 0.3381558116949222,
+          "MacroRec": 0.3031978683013933,
+          "AUC_ovr": 0.6599457261479121,
+          "Agreement": 0.9809954751131221
+        },
+        {
+          "Method": "precise_a11",
+          "Split": "fit",
+          "ACC": 0.3108108108108108,
+          "MacroF1": 0.253284831259779,
+          "MacroPrec": 0.2866571933203478,
+          "MacroRec": 0.2654307806198892,
+          "AUC_ovr": 0.6156750169033967,
+          "Agreement": 1.0
+        },
+        {
+          "Method": "precise_a11",
+          "Split": "test",
+          "ACC": 0.34705882352941175,
+          "MacroF1": 0.2976088916012694,
+          "MacroPrec": 0.3366350059561445,
+          "MacroRec": 0.3043198815866276,
+          "AUC_ovr": 0.6596056484236971,
+          "Agreement": 0.9995475113122172
+        }
+      ],
+      "report_vs_pseudo_labels_records": [
+        {
+          "Method": "Original",
+          "Split": "fit",
+          "ACC": 1.0,
+          "MacroF1": 1.0,
+          "MacroPrec": 1.0,
+          "MacroRec": 1.0,
+          "AUC_ovr": 0.9701831712184064,
+          "Agreement": 1.0
+        },
+        {
+          "Method": "Original",
+          "Split": "test",
+          "ACC": 1.0,
+          "MacroF1": 1.0,
+          "MacroPrec": 1.0,
+          "MacroRec": 1.0,
+          "AUC_ovr": 0.9686247815073761,
+          "Agreement": 1.0
+        },
+        {
+          "Method": "Quad4FHE",
+          "Split": "fit",
+          "ACC": 0.9307432432432432,
+          "MacroF1": 0.891166717486039,
+          "MacroPrec": 0.89414178688247,
+          "MacroRec": 0.8899979668242816,
+          "AUC_ovr": 0.9600604492220841,
+          "Agreement": 0.9307432432432432
+        },
+        {
+          "Method": "Quad4FHE",
+          "Split": "test",
+          "ACC": 0.9190045248868778,
+          "MacroF1": 0.8898980745731582,
+          "MacroPrec": 0.9015331143060482,
+          "MacroRec": 0.8809959335564252,
+          "AUC_ovr": 0.957100482993904,
+          "Agreement": 0.9190045248868778
+        },
+        {
+          "Method": "square",
+          "Split": "fit",
+          "ACC": 0.5304054054054054,
+          "MacroF1": 0.4217963394112151,
+          "MacroPrec": 0.4822113311276306,
+          "MacroRec": 0.4148470858154535,
+          "AUC_ovr": 0.7010147624048942,
+          "Agreement": 0.5304054054054054
+        },
+        {
+          "Method": "square",
+          "Split": "test",
+          "ACC": 0.5416289592760181,
+          "MacroF1": 0.40413138143137656,
+          "MacroPrec": 0.4854907877756725,
+          "MacroRec": 0.3961047041244058,
+          "AUC_ovr": 0.7306013419161289,
+          "Agreement": 0.5416289592760181
+        },
+        {
+          "Method": "ls_poly_2",
+          "Split": "fit",
+          "ACC": 0.7702702702702703,
+          "MacroF1": 0.6112538190795239,
+          "MacroPrec": 0.8831097414262757,
+          "MacroRec": 0.5504464131488794,
+          "AUC_ovr": 0.9611239432718557,
+          "Agreement": 0.7702702702702703
+        },
+        {
+          "Method": "ls_poly_2",
+          "Split": "test",
+          "ACC": 0.7384615384615385,
+          "MacroF1": 0.5401565799412378,
+          "MacroPrec": 0.862722907416002,
+          "MacroRec": 0.498476426407335,
+          "AUC_ovr": 0.9567429208409187,
+          "Agreement": 0.7384615384615385
+        },
+        {
+          "Method": "ls_poly_3",
+          "Split": "fit",
+          "ACC": 0.777027027027027,
+          "MacroF1": 0.6398880543156824,
+          "MacroPrec": 0.8662643678160921,
+          "MacroRec": 0.5759556945377773,
+          "AUC_ovr": 0.962776570650535,
+          "Agreement": 0.777027027027027
+        },
+        {
+          "Method": "ls_poly_3",
+          "Split": "test",
+          "ACC": 0.7574660633484163,
+          "MacroF1": 0.5808344906683247,
+          "MacroPrec": 0.8592995547330646,
+          "MacroRec": 0.5326766971535651,
+          "AUC_ovr": 0.9584698073057065,
+          "Agreement": 0.7574660633484163
+        },
+        {
+          "Method": "ls_poly_5",
+          "Split": "fit",
+          "ACC": 0.8445945945945946,
+          "MacroF1": 0.7714912427955907,
+          "MacroPrec": 0.9066581798649842,
+          "MacroRec": 0.7047472635872503,
+          "AUC_ovr": 0.9671883599534384,
+          "Agreement": 0.8445945945945946
+        },
+        {
+          "Method": "ls_poly_5",
+          "Split": "test",
+          "ACC": 0.8371040723981901,
+          "MacroF1": 0.7474299758917605,
+          "MacroPrec": 0.8812591409186303,
+          "MacroRec": 0.6882342898132645,
+          "AUC_ovr": 0.9635168853560148,
+          "Agreement": 0.8371040723981901
+        },
+        {
+          "Method": "ls_poly_7",
+          "Split": "fit",
+          "ACC": 0.9054054054054054,
+          "MacroF1": 0.859420412393326,
+          "MacroPrec": 0.9314456250819887,
+          "MacroRec": 0.8114617404683238,
+          "AUC_ovr": 0.9693271881657868,
+          "Agreement": 0.9054054054054054
+        },
+        {
+          "Method": "ls_poly_7",
+          "Split": "test",
+          "ACC": 0.885972850678733,
+          "MacroF1": 0.8352742120628733,
+          "MacroPrec": 0.9106938927704258,
+          "MacroRec": 0.7877268946627399,
+          "AUC_ovr": 0.9657018254413259,
+          "Agreement": 0.885972850678733
+        },
+        {
+          "Method": "remez_2",
+          "Split": "fit",
+          "ACC": 0.8141891891891891,
+          "MacroF1": 0.7231474007556139,
+          "MacroPrec": 0.8981635473653903,
+          "MacroRec": 0.651968717785598,
+          "AUC_ovr": 0.9620026477542802,
+          "Agreement": 0.8141891891891891
+        },
+        {
+          "Method": "remez_2",
+          "Split": "test",
+          "ACC": 0.8004524886877828,
+          "MacroF1": 0.6773528856794576,
+          "MacroPrec": 0.8635221470145851,
+          "MacroRec": 0.6183408489880294,
+          "AUC_ovr": 0.9576060422820538,
+          "Agreement": 0.8004524886877828
+        },
+        {
+          "Method": "remez_3",
+          "Split": "fit",
+          "ACC": 0.8361486486486487,
+          "MacroF1": 0.7606753971315124,
+          "MacroPrec": 0.9014146432831553,
+          "MacroRec": 0.6918506341148826,
+          "AUC_ovr": 0.9630737488015569,
+          "Agreement": 0.8361486486486487
+        },
+        {
+          "Method": "remez_3",
+          "Split": "test",
+          "ACC": 0.8158371040723982,
+          "MacroF1": 0.7113018055452283,
+          "MacroPrec": 0.8607490417487444,
+          "MacroRec": 0.6530912827532844,
+          "AUC_ovr": 0.9588026987986333,
+          "Agreement": 0.8158371040723982
+        },
+        {
+          "Method": "remez_5",
+          "Split": "fit",
+          "ACC": 0.910472972972973,
+          "MacroF1": 0.8752517648844945,
+          "MacroPrec": 0.9067328957893622,
+          "MacroRec": 0.8495836737737518,
+          "AUC_ovr": 0.9669763551466841,
+          "Agreement": 0.910472972972973
+        },
+        {
+          "Method": "remez_5",
+          "Split": "test",
+          "ACC": 0.8986425339366516,
+          "MacroF1": 0.8662958343848347,
+          "MacroPrec": 0.8945826861544072,
+          "MacroRec": 0.8432292169342223,
+          "AUC_ovr": 0.9636478304862637,
+          "Agreement": 0.8986425339366516
+        },
+        {
+          "Method": "remez_7",
+          "Split": "fit",
+          "ACC": 0.9307432432432432,
+          "MacroF1": 0.8935927034182797,
+          "MacroPrec": 0.8791115808885166,
+          "MacroRec": 0.9099237704748514,
+          "AUC_ovr": 0.9684539653939407,
+          "Agreement": 0.9307432432432432
+        },
+        {
+          "Method": "remez_7",
+          "Split": "test",
+          "ACC": 0.9239819004524887,
+          "MacroF1": 0.9013742730778672,
+          "MacroPrec": 0.8972017193438745,
+          "MacroRec": 0.9067502164501235,
+          "AUC_ovr": 0.9657026086685649,
+          "Agreement": 0.9239819004524887
+        },
+        {
+          "Method": "ola",
+          "Split": "fit",
+          "ACC": 0.9864864864864865,
+          "MacroF1": 0.9857736297435746,
+          "MacroPrec": 0.9788636363636364,
+          "MacroRec": 0.9932213105943892,
+          "AUC_ovr": 0.9702065855688076,
+          "Agreement": 0.9864864864864865
+        },
+        {
+          "Method": "ola",
+          "Split": "test",
+          "ACC": 0.9809954751131221,
+          "MacroF1": 0.9751109651779141,
+          "MacroPrec": 0.9790176591090682,
+          "MacroRec": 0.9712950303771171,
+          "AUC_ovr": 0.9675191229233505,
+          "Agreement": 0.9809954751131221
+        },
+        {
+          "Method": "precise_a11",
+          "Split": "fit",
+          "ACC": 1.0,
+          "MacroF1": 1.0,
+          "MacroPrec": 1.0,
+          "MacroRec": 1.0,
+          "AUC_ovr": 0.9701924863453156,
+          "Agreement": 1.0
+        },
+        {
+          "Method": "precise_a11",
+          "Split": "test",
+          "ACC": 0.9995475113122172,
+          "MacroF1": 0.9993490622774515,
+          "MacroPrec": 0.9989304812834223,
+          "MacroRec": 0.9997706422018349,
+          "AUC_ovr": 0.9686265027654022,
+          "Agreement": 0.9995475113122172
+        }
+      ],
+      "pool": "10%"
+    },
+    {
+      "key": "pool=20%",
+      "hidden_dim": 256,
+      "pool_fraction": 0.2,
+      "rep_fit_size": 1185,
+      "original": {
+        "test_top1_acc": 0.34705882352941175,
+        "test_top5_acc": null
+      },
+      "quad4fhe": {
+        "alpha": 0.15805511501160827,
+        "beta": 0.39966213638267856,
+        "eta": 0.1361034957086741,
+        "threshold": null,
+        "zero_threshold_realized": null,
+        "method_used": "soft(C=100.0)",
+        "hard_feasible": false,
+        "empirical_margin": -4.0949650529660016,
+        "normalized_margin": -0.23440508358617404,
+        "quant_decimals": 0,
+        "constraint_version": "multiclass_bias_free_dL_v1",
+        "he_artifact_dir": "he_artifacts_sst5_pool_20",
+        "calib_n": 1185,
+        "calib_agreement": 0.9172995780590717,
+        "calib_mismatch_count": 98,
+        "exact_preserved_on_calib": false,
+        "test_n": 2210,
+        "test_agreement": 0.918552036199095,
+        "test_mismatch_count": 180,
+        "calib_test_agreement_gap": -0.0012524581400232826,
+        "test_top1_acc": 0.34434389140271493,
+        "test_top5_acc": null,
+        "test_macro_f1": 0.2907747636420977,
+        "solver_diagnostics": {
+          "num_pairwise_constraints": 4740,
+          "min_pairwise_margin": -4.0949650529660016,
+          "normalized_min_pairwise_margin": -0.23440508358617404,
+          "calib_agreement": 0.9172995780590717,
+          "calib_mismatch_count": 98,
+          "exact_preserved": false,
+          "slack_positive_count": 242,
+          "sum_slack": 238.4741573179491,
+          "mean_slack": 0.20124401461430305,
+          "max_slack": 5.0949650529660016,
+          "pairwise_slack_positive_count": 279,
+          "pairwise_sum_slack": 260.82769196320197,
+          "pairwise_max_slack": 5.0949650529660016,
+          "soft_C_grid": [
+            0.001,
+            0.01,
+            0.1,
+            1.0,
+            10.0,
+            100.0
+          ],
+          "selected_C": 100.0,
+          "soft_trace": [
+            {
+              "C": 0.001,
+              "objective": 1.4128349896151562,
+              "calib_agreement": 0.9105485232067511,
+              "calib_mismatch_count": 106,
+              "min_pairwise_margin": -0.5981525855695158,
+              "sum_slack": 752.1789364914391,
+              "max_slack": 1.5981525855695158,
+              "slack_positive_count": 1083
+            },
+            {
+              "C": 0.01,
+              "objective": 6.181239332247998,
+              "calib_agreement": 0.889451476793249,
+              "calib_mismatch_count": 131,
+              "min_pairwise_margin": -0.8716712719948796,
+              "sum_slack": 449.8642362151977,
+              "max_slack": 1.8716712719948796,
+              "slack_positive_count": 696
+            },
+            {
+              "C": 0.1,
+              "objective": 38.37217718366717,
+              "calib_agreement": 0.8843881856540085,
+              "calib_mismatch_count": 137,
+              "min_pairwise_margin": -1.605996030980315,
+              "sum_slack": 328.3669648233317,
+              "max_slack": 2.605996030980315,
+              "slack_positive_count": 439
+            },
+            {
+              "C": 1.0,
+              "objective": 293.0058286789044,
+              "calib_agreement": 0.9130801687763713,
+              "calib_mismatch_count": 103,
+              "min_pairwise_margin": -2.231177271468469,
+              "sum_slack": 264.0739926058777,
+              "max_slack": 3.231177271468469,
+              "slack_positive_count": 321
+            },
+            {
+              "C": 10.0,
+              "objective": 2508.346630703772,
+              "calib_agreement": 0.9172995780590717,
+              "calib_mismatch_count": 98,
+              "min_pairwise_margin": -3.415803660813447,
+              "sum_slack": 241.2714015469171,
+              "max_slack": 4.415803660813447,
+              "slack_positive_count": 260
+            },
+            {
+              "C": 100.0,
+              "objective": 24000.009343283662,
+              "calib_agreement": 0.9172995780590717,
+              "calib_mismatch_count": 98,
+              "min_pairwise_margin": -4.0949650529660016,
+              "sum_slack": 238.4741573179491,
+              "max_slack": 5.0949650529660016,
+              "slack_positive_count": 242
+            }
+          ],
+          "regime": "soft(C=100.0)",
+          "constraint_version": "multiclass_bias_free_dL_v1",
+          "fit_exact_preserved": false,
+          "fit_mismatch_count": 98,
+          "fit_agreement": 0.9172995780590717
+        },
+        "num_pairwise_constraints": 4740,
+        "min_pairwise_margin": -4.0949650529660016,
+        "normalized_min_pairwise_margin": -0.23440508358617404,
+        "slack_positive_count": 242,
+        "sum_slack": 238.4741573179491,
+        "mean_slack": 0.20124401461430305,
+        "max_slack": 5.0949650529660016,
+        "pairwise_slack_positive_count": 279,
+        "pairwise_sum_slack": 260.82769196320197,
+        "pairwise_mean_slack": null,
+        "pairwise_max_slack": 5.0949650529660016,
+        "selected_C": 100.0,
+        "soft_C_grid": [
+          0.001,
+          0.01,
+          0.1,
+          1.0,
+          10.0,
+          100.0
+        ],
+        "soft_trace": [
+          {
+            "C": 0.001,
+            "objective": 1.4128349896151562,
+            "calib_agreement": 0.9105485232067511,
+            "calib_mismatch_count": 106,
+            "min_pairwise_margin": -0.5981525855695158,
+            "sum_slack": 752.1789364914391,
+            "max_slack": 1.5981525855695158,
+            "slack_positive_count": 1083
+          },
+          {
+            "C": 0.01,
+            "objective": 6.181239332247998,
+            "calib_agreement": 0.889451476793249,
+            "calib_mismatch_count": 131,
+            "min_pairwise_margin": -0.8716712719948796,
+            "sum_slack": 449.8642362151977,
+            "max_slack": 1.8716712719948796,
+            "slack_positive_count": 696
+          },
+          {
+            "C": 0.1,
+            "objective": 38.37217718366717,
+            "calib_agreement": 0.8843881856540085,
+            "calib_mismatch_count": 137,
+            "min_pairwise_margin": -1.605996030980315,
+            "sum_slack": 328.3669648233317,
+            "max_slack": 2.605996030980315,
+            "slack_positive_count": 439
+          },
+          {
+            "C": 1.0,
+            "objective": 293.0058286789044,
+            "calib_agreement": 0.9130801687763713,
+            "calib_mismatch_count": 103,
+            "min_pairwise_margin": -2.231177271468469,
+            "sum_slack": 264.0739926058777,
+            "max_slack": 3.231177271468469,
+            "slack_positive_count": 321
+          },
+          {
+            "C": 10.0,
+            "objective": 2508.346630703772,
+            "calib_agreement": 0.9172995780590717,
+            "calib_mismatch_count": 98,
+            "min_pairwise_margin": -3.415803660813447,
+            "sum_slack": 241.2714015469171,
+            "max_slack": 4.415803660813447,
+            "slack_positive_count": 260
+          },
+          {
+            "C": 100.0,
+            "objective": 24000.009343283662,
+            "calib_agreement": 0.9172995780590717,
+            "calib_mismatch_count": 98,
+            "min_pairwise_margin": -4.0949650529660016,
+            "sum_slack": 238.4741573179491,
+            "max_slack": 5.0949650529660016,
+            "slack_positive_count": 242
+          }
+        ],
+        "selected_mu": null,
+        "mu_grid": null,
+        "mu_p": null,
+        "mu_n": null
+      },
+      "report_vs_ground_truth_test": {
+        "Original": {
+          "ACC": 0.34705882352941175,
+          "MacroF1": 0.2975988552473062,
+          "MacroPrec": 0.3367820188901291,
+          "MacroRec": 0.3043198815866276,
+          "AUC_ovr": 0.6595925928831745,
+          "Agreement": 1.0
+        },
+        "Quad4FHE": {
+          "ACC": 0.34434389140271493,
+          "MacroF1": 0.2907747636420977,
+          "MacroPrec": 0.3281917065271391,
+          "MacroRec": 0.30003690235528035,
+          "AUC_ovr": 0.6607972260876751,
+          "Agreement": 0.918552036199095
+        },
+        "square": {
+          "ACC": 0.2737556561085973,
+          "MacroF1": 0.2040155016071267,
+          "MacroPrec": 0.2593664027730015,
+          "MacroRec": 0.22792235079292422,
+          "AUC_ovr": 0.5662748935101186,
+          "Agreement": 0.5416289592760181
+        },
+        "ls_poly_2": {
+          "ACC": 0.34570135746606334,
+          "MacroF1": 0.22866933230847422,
+          "MacroPrec": 0.4002182679573984,
+          "MacroRec": 0.28119720455990876,
+          "AUC_ovr": 0.6635263964092656,
+          "Agreement": 0.7384615384615385
+        },
+        "ls_poly_3": {
+          "ACC": 0.34886877828054297,
+          "MacroF1": 0.24305573895571647,
+          "MacroPrec": 0.41672718861831665,
+          "MacroRec": 0.28614275070621975,
+          "AUC_ovr": 0.6638224383361047,
+          "Agreement": 0.7574660633484163
+        },
+        "ls_poly_5": {
+          "ACC": 0.34796380090497736,
+          "MacroF1": 0.26601113106957175,
+          "MacroPrec": 0.35316352509924087,
+          "MacroRec": 0.29230116471920353,
+          "AUC_ovr": 0.6638031414194391,
+          "Agreement": 0.8371040723981901
+        },
+        "ls_poly_7": {
+          "ACC": 0.351131221719457,
+          "MacroF1": 0.2797369037597109,
+          "MacroPrec": 0.3404603477266213,
+          "MacroRec": 0.29879395484591764,
+          "AUC_ovr": 0.6630630782759669,
+          "Agreement": 0.885972850678733
+        },
+        "remez_2": {
+          "ACC": 0.35203619909502265,
+          "MacroF1": 0.2587955606690106,
+          "MacroPrec": 0.370659776462419,
+          "MacroRec": 0.29230385287300964,
+          "AUC_ovr": 0.6644759152886589,
+          "Agreement": 0.8004524886877828
+        },
+        "remez_3": {
+          "ACC": 0.3502262443438914,
+          "MacroF1": 0.26478414460209565,
+          "MacroPrec": 0.3615772934837739,
+          "MacroRec": 0.2930262586638596,
+          "AUC_ovr": 0.6645644995317461,
+          "Agreement": 0.8158371040723982
+        },
+        "remez_5": {
+          "ACC": 0.34570135746606334,
+          "MacroF1": 0.287236167380831,
+          "MacroPrec": 0.3337637945235977,
+          "MacroRec": 0.2996733891970579,
+          "AUC_ovr": 0.6636274518575407,
+          "Agreement": 0.8986425339366516
+        },
+        "remez_7": {
+          "ACC": 0.34796380090497736,
+          "MacroF1": 0.29791958646224914,
+          "MacroPrec": 0.3334447631508072,
+          "MacroRec": 0.30543173384178735,
+          "AUC_ovr": 0.6621004698665002,
+          "Agreement": 0.9239819004524887
+        },
+        "ola": {
+          "ACC": 0.34615384615384615,
+          "MacroF1": 0.2967353362158317,
+          "MacroPrec": 0.3381558116949222,
+          "MacroRec": 0.3031978683013933,
+          "AUC_ovr": 0.6599456958198245,
+          "Agreement": 0.9809954751131221
+        },
+        "precise_a11": {
+          "ACC": 0.34705882352941175,
+          "MacroF1": 0.2976088916012694,
+          "MacroPrec": 0.3366350059561445,
+          "MacroRec": 0.3043198815866276,
+          "AUC_ovr": 0.6596056484236971,
+          "Agreement": 0.9995475113122172
+        }
+      },
+      "report_vs_pseudo_labels_test": {
+        "Original": {
+          "ACC": 1.0,
+          "MacroF1": 1.0,
+          "MacroPrec": 1.0,
+          "MacroRec": 1.0,
+          "AUC_ovr": 0.9686247815073761,
+          "Agreement": 1.0
+        },
+        "Quad4FHE": {
+          "ACC": 0.918552036199095,
+          "MacroF1": 0.8918882390396327,
+          "MacroPrec": 0.8971619902401988,
+          "MacroRec": 0.888071796884559,
+          "AUC_ovr": 0.9598285418804713,
+          "Agreement": 0.918552036199095
+        },
+        "square": {
+          "ACC": 0.5416289592760181,
+          "MacroF1": 0.40413138143137656,
+          "MacroPrec": 0.4854907877756725,
+          "MacroRec": 0.3961047041244058,
+          "AUC_ovr": 0.7306013419161289,
+          "Agreement": 0.5416289592760181
+        },
+        "ls_poly_2": {
+          "ACC": 0.7384615384615385,
+          "MacroF1": 0.5401565799412378,
+          "MacroPrec": 0.862722907416002,
+          "MacroRec": 0.498476426407335,
+          "AUC_ovr": 0.9567429208409187,
+          "Agreement": 0.7384615384615385
+        },
+        "ls_poly_3": {
+          "ACC": 0.7574660633484163,
+          "MacroF1": 0.5808344906683247,
+          "MacroPrec": 0.8592995547330646,
+          "MacroRec": 0.5326766971535651,
+          "AUC_ovr": 0.9584698073057065,
+          "Agreement": 0.7574660633484163
+        },
+        "ls_poly_5": {
+          "ACC": 0.8371040723981901,
+          "MacroF1": 0.7474299758917605,
+          "MacroPrec": 0.8812591409186303,
+          "MacroRec": 0.6882342898132645,
+          "AUC_ovr": 0.9635168853560148,
+          "Agreement": 0.8371040723981901
+        },
+        "ls_poly_7": {
+          "ACC": 0.885972850678733,
+          "MacroF1": 0.8352742120628733,
+          "MacroPrec": 0.9106938927704258,
+          "MacroRec": 0.7877268946627399,
+          "AUC_ovr": 0.9657018254413259,
+          "Agreement": 0.885972850678733
+        },
+        "remez_2": {
+          "ACC": 0.8004524886877828,
+          "MacroF1": 0.6773528856794576,
+          "MacroPrec": 0.8635221470145851,
+          "MacroRec": 0.6183408489880294,
+          "AUC_ovr": 0.9576060422820538,
+          "Agreement": 0.8004524886877828
+        },
+        "remez_3": {
+          "ACC": 0.8158371040723982,
+          "MacroF1": 0.7113018055452283,
+          "MacroPrec": 0.8607490417487444,
+          "MacroRec": 0.6530912827532844,
+          "AUC_ovr": 0.9588026987986333,
+          "Agreement": 0.8158371040723982
+        },
+        "remez_5": {
+          "ACC": 0.8986425339366516,
+          "MacroF1": 0.8662958343848347,
+          "MacroPrec": 0.8945826861544072,
+          "MacroRec": 0.8432292169342223,
+          "AUC_ovr": 0.9636478304862637,
+          "Agreement": 0.8986425339366516
+        },
+        "remez_7": {
+          "ACC": 0.9239819004524887,
+          "MacroF1": 0.9013742730778672,
+          "MacroPrec": 0.8972017193438745,
+          "MacroRec": 0.9067502164501235,
+          "AUC_ovr": 0.9657026086685649,
+          "Agreement": 0.9239819004524887
+        },
+        "ola": {
+          "ACC": 0.9809954751131221,
+          "MacroF1": 0.9751109651779141,
+          "MacroPrec": 0.9790176591090682,
+          "MacroRec": 0.9712950303771171,
+          "AUC_ovr": 0.9675192993821575,
+          "Agreement": 0.9809954751131221
+        },
+        "precise_a11": {
+          "ACC": 0.9995475113122172,
+          "MacroF1": 0.9993490622774515,
+          "MacroPrec": 0.9989304812834223,
+          "MacroRec": 0.9997706422018349,
+          "AUC_ovr": 0.9686265027654022,
+          "Agreement": 0.9995475113122172
+        }
+      },
+      "report_vs_ground_truth_records": [
+        {
+          "Method": "Original",
+          "Split": "fit",
+          "ACC": 0.3189873417721519,
+          "MacroF1": 0.2837015445614851,
+          "MacroPrec": 0.3125086025636823,
+          "MacroRec": 0.28543513841523765,
+          "AUC_ovr": 0.641520885321939,
+          "Agreement": 1.0
+        },
+        {
+          "Method": "Original",
+          "Split": "test",
+          "ACC": 0.34705882352941175,
+          "MacroF1": 0.2975988552473062,
+          "MacroPrec": 0.3367820188901291,
+          "MacroRec": 0.3043198815866276,
+          "AUC_ovr": 0.6595925928831745,
+          "Agreement": 1.0
+        },
+        {
+          "Method": "Quad4FHE",
+          "Split": "fit",
+          "ACC": 0.3181434599156118,
+          "MacroF1": 0.27595860580523207,
+          "MacroPrec": 0.30329411496236824,
+          "MacroRec": 0.2820897850909935,
+          "AUC_ovr": 0.6417420129544282,
+          "Agreement": 0.9172995780590717
+        },
+        {
+          "Method": "Quad4FHE",
+          "Split": "test",
+          "ACC": 0.34434389140271493,
+          "MacroF1": 0.2907747636420977,
+          "MacroPrec": 0.3281917065271391,
+          "MacroRec": 0.30003690235528035,
+          "AUC_ovr": 0.6607972260876751,
+          "Agreement": 0.918552036199095
+        },
+        {
+          "Method": "square",
+          "Split": "fit",
+          "ACC": 0.26666666666666666,
+          "MacroF1": 0.21163396364522188,
+          "MacroPrec": 0.2864533045178434,
+          "MacroRec": 0.22182661250393232,
+          "AUC_ovr": 0.5511157133502793,
+          "Agreement": 0.5198312236286919
+        },
+        {
+          "Method": "square",
+          "Split": "test",
+          "ACC": 0.2737556561085973,
+          "MacroF1": 0.2040155016071267,
+          "MacroPrec": 0.2593664027730015,
+          "MacroRec": 0.22792235079292422,
+          "AUC_ovr": 0.5662748935101186,
+          "Agreement": 0.5416289592760181
+        },
+        {
+          "Method": "ls_poly_2",
+          "Split": "fit",
+          "ACC": 0.3308016877637131,
+          "MacroF1": 0.22338497166087046,
+          "MacroPrec": 0.3770185282199451,
+          "MacroRec": 0.26174727406368065,
+          "AUC_ovr": 0.6445725722645914,
+          "Agreement": 0.7316455696202532
+        },
+        {
+          "Method": "ls_poly_2",
+          "Split": "test",
+          "ACC": 0.34570135746606334,
+          "MacroF1": 0.22866933230847422,
+          "MacroPrec": 0.4002182679573984,
+          "MacroRec": 0.28119720455990876,
+          "AUC_ovr": 0.6635263964092656,
+          "Agreement": 0.7384615384615385
+        },
+        {
+          "Method": "ls_poly_3",
+          "Split": "fit",
+          "ACC": 0.33839662447257385,
+          "MacroF1": 0.24326606663078265,
+          "MacroPrec": 0.3781900411008583,
+          "MacroRec": 0.27274617165702963,
+          "AUC_ovr": 0.6451171760438078,
+          "Agreement": 0.7628691983122363
+        },
+        {
+          "Method": "ls_poly_3",
+          "Split": "test",
+          "ACC": 0.34886877828054297,
+          "MacroF1": 0.24305573895571647,
+          "MacroPrec": 0.41672718861831665,
+          "MacroRec": 0.28614275070621975,
+          "AUC_ovr": 0.6638224383361047,
+          "Agreement": 0.7574660633484163
+        },
+        {
+          "Method": "ls_poly_5",
+          "Split": "fit",
+          "ACC": 0.32827004219409284,
+          "MacroF1": 0.25781932870526436,
+          "MacroPrec": 0.3244154581990288,
+          "MacroRec": 0.2736465802928662,
+          "AUC_ovr": 0.6450351254616496,
+          "Agreement": 0.830379746835443
+        },
+        {
+          "Method": "ls_poly_5",
+          "Split": "test",
+          "ACC": 0.34796380090497736,
+          "MacroF1": 0.26601113106957175,
+          "MacroPrec": 0.35316352509924087,
+          "MacroRec": 0.29230116471920353,
+          "AUC_ovr": 0.6638031414194391,
+          "Agreement": 0.8371040723981901
+        },
+        {
+          "Method": "ls_poly_7",
+          "Split": "fit",
+          "ACC": 0.33248945147679326,
+          "MacroF1": 0.2759344504118548,
+          "MacroPrec": 0.3290678989781614,
+          "MacroRec": 0.2849927978300179,
+          "AUC_ovr": 0.6444593299705081,
+          "Agreement": 0.8852320675105485
+        },
+        {
+          "Method": "ls_poly_7",
+          "Split": "test",
+          "ACC": 0.351131221719457,
+          "MacroF1": 0.2797369037597109,
+          "MacroPrec": 0.3404603477266213,
+          "MacroRec": 0.29879395484591764,
+          "AUC_ovr": 0.6630630782759669,
+          "Agreement": 0.885972850678733
+        },
+        {
+          "Method": "remez_2",
+          "Split": "fit",
+          "ACC": 0.3367088607594937,
+          "MacroF1": 0.2546078252277354,
+          "MacroPrec": 0.34387933159174006,
+          "MacroRec": 0.2764627969013591,
+          "AUC_ovr": 0.6457431705982096,
+          "Agreement": 0.7924050632911392
+        },
+        {
+          "Method": "remez_2",
+          "Split": "test",
+          "ACC": 0.35203619909502265,
+          "MacroF1": 0.2587955606690106,
+          "MacroPrec": 0.370659776462419,
+          "MacroRec": 0.29230385287300964,
+          "AUC_ovr": 0.6644759152886589,
+          "Agreement": 0.8004524886877828
+        },
+        {
+          "Method": "remez_3",
+          "Split": "fit",
+          "ACC": 0.33164556962025316,
+          "MacroF1": 0.25898299374113987,
+          "MacroPrec": 0.327241016039643,
+          "MacroRec": 0.2761544533566748,
+          "AUC_ovr": 0.6457164615033026,
+          "Agreement": 0.8194092827004219
+        },
+        {
+          "Method": "remez_3",
+          "Split": "test",
+          "ACC": 0.3502262443438914,
+          "MacroF1": 0.26478414460209565,
+          "MacroPrec": 0.3615772934837739,
+          "MacroRec": 0.2930262586638596,
+          "AUC_ovr": 0.6645644995317461,
+          "Agreement": 0.8158371040723982
+        },
+        {
+          "Method": "remez_5",
+          "Split": "fit",
+          "ACC": 0.32827004219409284,
+          "MacroF1": 0.2818678794628913,
+          "MacroPrec": 0.3174917226279562,
+          "MacroRec": 0.28761001328653607,
+          "AUC_ovr": 0.6448085114132572,
+          "Agreement": 0.8962025316455696
+        },
+        {
+          "Method": "remez_5",
+          "Split": "test",
+          "ACC": 0.34570135746606334,
+          "MacroF1": 0.287236167380831,
+          "MacroPrec": 0.3337637945235977,
+          "MacroRec": 0.2996733891970579,
+          "AUC_ovr": 0.6636274518575407,
+          "Agreement": 0.8986425339366516
+        },
+        {
+          "Method": "remez_7",
+          "Split": "fit",
+          "ACC": 0.32236286919831225,
+          "MacroF1": 0.28733955499621305,
+          "MacroPrec": 0.31317320690977485,
+          "MacroRec": 0.29021921983089805,
+          "AUC_ovr": 0.6436308412766389,
+          "Agreement": 0.9172995780590717
+        },
+        {
+          "Method": "remez_7",
+          "Split": "test",
+          "ACC": 0.34796380090497736,
+          "MacroF1": 0.29791958646224914,
+          "MacroPrec": 0.3334447631508072,
+          "MacroRec": 0.30543173384178735,
+          "AUC_ovr": 0.6621004698665002,
+          "Agreement": 0.9239819004524887
+        },
+        {
+          "Method": "ola",
+          "Split": "fit",
+          "ACC": 0.3206751054852321,
+          "MacroF1": 0.2853887925758592,
+          "MacroPrec": 0.31223292155329313,
+          "MacroRec": 0.28715161929634975,
+          "AUC_ovr": 0.6415964245990671,
+          "Agreement": 0.980590717299578
+        },
+        {
+          "Method": "ola",
+          "Split": "test",
+          "ACC": 0.34615384615384615,
+          "MacroF1": 0.2967353362158317,
+          "MacroPrec": 0.3381558116949222,
+          "MacroRec": 0.3031978683013933,
+          "AUC_ovr": 0.6599456958198245,
+          "Agreement": 0.9809954751131221
+        },
+        {
+          "Method": "precise_a11",
+          "Split": "fit",
+          "ACC": 0.3189873417721519,
+          "MacroF1": 0.2837015445614851,
+          "MacroPrec": 0.3125086025636823,
+          "MacroRec": 0.28543513841523765,
+          "AUC_ovr": 0.6415162309704334,
+          "Agreement": 1.0
+        },
+        {
+          "Method": "precise_a11",
+          "Split": "test",
+          "ACC": 0.34705882352941175,
+          "MacroF1": 0.2976088916012694,
+          "MacroPrec": 0.3366350059561445,
+          "MacroRec": 0.3043198815866276,
+          "AUC_ovr": 0.6596056484236971,
+          "Agreement": 0.9995475113122172
+        }
+      ],
+      "report_vs_pseudo_labels_records": [
+        {
+          "Method": "Original",
+          "Split": "fit",
+          "ACC": 1.0,
+          "MacroF1": 1.0,
+          "MacroPrec": 1.0,
+          "MacroRec": 1.0,
+          "AUC_ovr": 0.9699045214445453,
+          "Agreement": 1.0
+        },
+        {
+          "Method": "Original",
+          "Split": "test",
+          "ACC": 1.0,
+          "MacroF1": 1.0,
+          "MacroPrec": 1.0,
+          "MacroRec": 1.0,
+          "AUC_ovr": 0.9686247815073761,
+          "Agreement": 1.0
+        },
+        {
+          "Method": "Quad4FHE",
+          "Split": "fit",
+          "ACC": 0.9172995780590717,
+          "MacroF1": 0.8905325908182278,
+          "MacroPrec": 0.9046776958009941,
+          "MacroRec": 0.8812653733798191,
+          "AUC_ovr": 0.9620954399883124,
+          "Agreement": 0.9172995780590717
+        },
+        {
+          "Method": "Quad4FHE",
+          "Split": "test",
+          "ACC": 0.918552036199095,
+          "MacroF1": 0.8918882390396327,
+          "MacroPrec": 0.8971619902401988,
+          "MacroRec": 0.888071796884559,
+          "AUC_ovr": 0.9598285418804713,
+          "Agreement": 0.918552036199095
+        },
+        {
+          "Method": "square",
+          "Split": "fit",
+          "ACC": 0.5198312236286919,
+          "MacroF1": 0.4111943786091863,
+          "MacroPrec": 0.5131678092117445,
+          "MacroRec": 0.3935947498153046,
+          "AUC_ovr": 0.7127199468420171,
+          "Agreement": 0.5198312236286919
+        },
+        {
+          "Method": "square",
+          "Split": "test",
+          "ACC": 0.5416289592760181,
+          "MacroF1": 0.40413138143137656,
+          "MacroPrec": 0.4854907877756725,
+          "MacroRec": 0.3961047041244058,
+          "AUC_ovr": 0.7306013419161289,
+          "Agreement": 0.5416289592760181
+        },
+        {
+          "Method": "ls_poly_2",
+          "Split": "fit",
+          "ACC": 0.7316455696202532,
+          "MacroF1": 0.5567518843326943,
+          "MacroPrec": 0.8585867765642925,
+          "MacroRec": 0.5123864008206996,
+          "AUC_ovr": 0.9590784871615888,
+          "Agreement": 0.7316455696202532
+        },
+        {
+          "Method": "ls_poly_2",
+          "Split": "test",
+          "ACC": 0.7384615384615385,
+          "MacroF1": 0.5401565799412378,
+          "MacroPrec": 0.862722907416002,
+          "MacroRec": 0.498476426407335,
+          "AUC_ovr": 0.9567429208409187,
+          "Agreement": 0.7384615384615385
+        },
+        {
+          "Method": "ls_poly_3",
+          "Split": "fit",
+          "ACC": 0.7628691983122363,
+          "MacroF1": 0.6251154328331971,
+          "MacroPrec": 0.8688081556997218,
+          "MacroRec": 0.5693251023900905,
+          "AUC_ovr": 0.960788895772082,
+          "Agreement": 0.7628691983122363
+        },
+        {
+          "Method": "ls_poly_3",
+          "Split": "test",
+          "ACC": 0.7574660633484163,
+          "MacroF1": 0.5808344906683247,
+          "MacroPrec": 0.8592995547330646,
+          "MacroRec": 0.5326766971535651,
+          "AUC_ovr": 0.9584698073057065,
+          "Agreement": 0.7574660633484163
+        },
+        {
+          "Method": "ls_poly_5",
+          "Split": "fit",
+          "ACC": 0.830379746835443,
+          "MacroF1": 0.7637013616467864,
+          "MacroPrec": 0.8835715597456811,
+          "MacroRec": 0.7064347033555423,
+          "AUC_ovr": 0.9656760882030732,
+          "Agreement": 0.830379746835443
+        },
+        {
+          "Method": "ls_poly_5",
+          "Split": "test",
+          "ACC": 0.8371040723981901,
+          "MacroF1": 0.7474299758917605,
+          "MacroPrec": 0.8812591409186303,
+          "MacroRec": 0.6882342898132645,
+          "AUC_ovr": 0.9635168853560148,
+          "Agreement": 0.8371040723981901
+        },
+        {
+          "Method": "ls_poly_7",
+          "Split": "fit",
+          "ACC": 0.8852320675105485,
+          "MacroF1": 0.8392682287290698,
+          "MacroPrec": 0.9090793309437355,
+          "MacroRec": 0.7959117393930619,
+          "AUC_ovr": 0.9675835413565977,
+          "Agreement": 0.8852320675105485
+        },
+        {
+          "Method": "ls_poly_7",
+          "Split": "test",
+          "ACC": 0.885972850678733,
+          "MacroF1": 0.8352742120628733,
+          "MacroPrec": 0.9106938927704258,
+          "MacroRec": 0.7877268946627399,
+          "AUC_ovr": 0.9657018254413259,
+          "Agreement": 0.885972850678733
+        },
+        {
+          "Method": "remez_2",
+          "Split": "fit",
+          "ACC": 0.7924050632911392,
+          "MacroF1": 0.6965127703817416,
+          "MacroPrec": 0.8616224036695547,
+          "MacroRec": 0.6358324946552095,
+          "AUC_ovr": 0.9600544401793311,
+          "Agreement": 0.7924050632911392
+        },
+        {
+          "Method": "remez_2",
+          "Split": "test",
+          "ACC": 0.8004524886877828,
+          "MacroF1": 0.6773528856794576,
+          "MacroPrec": 0.8635221470145851,
+          "MacroRec": 0.6183408489880294,
+          "AUC_ovr": 0.9576060422820538,
+          "Agreement": 0.8004524886877828
+        },
+        {
+          "Method": "remez_3",
+          "Split": "fit",
+          "ACC": 0.8194092827004219,
+          "MacroF1": 0.7452970446947085,
+          "MacroPrec": 0.8680416135792098,
+          "MacroRec": 0.6877119212113731,
+          "AUC_ovr": 0.9612258867550076,
+          "Agreement": 0.8194092827004219
+        },
+        {
+          "Method": "remez_3",
+          "Split": "test",
+          "ACC": 0.8158371040723982,
+          "MacroF1": 0.7113018055452283,
+          "MacroPrec": 0.8607490417487444,
+          "MacroRec": 0.6530912827532844,
+          "AUC_ovr": 0.9588026987986333,
+          "Agreement": 0.8158371040723982
+        },
+        {
+          "Method": "remez_5",
+          "Split": "fit",
+          "ACC": 0.8962025316455696,
+          "MacroF1": 0.8669152634289599,
+          "MacroPrec": 0.8919398870663097,
+          "MacroRec": 0.8459498537138262,
+          "AUC_ovr": 0.9656665034513143,
+          "Agreement": 0.8962025316455696
+        },
+        {
+          "Method": "remez_5",
+          "Split": "test",
+          "ACC": 0.8986425339366516,
+          "MacroF1": 0.8662958343848347,
+          "MacroPrec": 0.8945826861544072,
+          "MacroRec": 0.8432292169342223,
+          "AUC_ovr": 0.9636478304862637,
+          "Agreement": 0.8986425339366516
+        },
+        {
+          "Method": "remez_7",
+          "Split": "fit",
+          "ACC": 0.9172995780590717,
+          "MacroF1": 0.8935876519009476,
+          "MacroPrec": 0.8910790322264888,
+          "MacroRec": 0.8981846525232664,
+          "AUC_ovr": 0.9674702781823259,
+          "Agreement": 0.9172995780590717
+        },
+        {
+          "Method": "remez_7",
+          "Split": "test",
+          "ACC": 0.9239819004524887,
+          "MacroF1": 0.9013742730778672,
+          "MacroPrec": 0.8972017193438745,
+          "MacroRec": 0.9067502164501235,
+          "AUC_ovr": 0.9657026086685649,
+          "Agreement": 0.9239819004524887
+        },
+        {
+          "Method": "ola",
+          "Split": "fit",
+          "ACC": 0.980590717299578,
+          "MacroF1": 0.9778111177431766,
+          "MacroPrec": 0.9729759388498234,
+          "MacroRec": 0.9828912629272043,
+          "AUC_ovr": 0.9697926685896112,
+          "Agreement": 0.980590717299578
+        },
+        {
+          "Method": "ola",
+          "Split": "test",
+          "ACC": 0.9809954751131221,
+          "MacroF1": 0.9751109651779141,
+          "MacroPrec": 0.9790176591090682,
+          "MacroRec": 0.9712950303771171,
+          "AUC_ovr": 0.9675192993821575,
+          "Agreement": 0.9809954751131221
+        },
+        {
+          "Method": "precise_a11",
+          "Split": "fit",
+          "ACC": 1.0,
+          "MacroF1": 1.0,
+          "MacroPrec": 1.0,
+          "MacroRec": 1.0,
+          "AUC_ovr": 0.9699050349314831,
+          "Agreement": 1.0
+        },
+        {
+          "Method": "precise_a11",
+          "Split": "test",
+          "ACC": 0.9995475113122172,
+          "MacroF1": 0.9993490622774515,
+          "MacroPrec": 0.9989304812834223,
+          "MacroRec": 0.9997706422018349,
+          "AUC_ovr": 0.9686265027654022,
+          "Agreement": 0.9995475113122172
+        }
+      ],
+      "pool": "20%"
+    }
+  ],
+  "summary": [
+    {
+      "key": "pool=01%",
+      "hidden_dim": 256,
+      "pool_fraction": 0.01,
+      "rep_fit_size": 59,
+      "status": "ok",
+      "method_used": "soft(C=100.0)",
+      "hard_feasible": false,
+      "alpha": 0.13497330148377257,
+      "beta": 0.304777676641093,
+      "eta": 0.09965855893646841,
+      "empirical_margin": -0.8625029720855055,
+      "normalized_margin": -0.05737859322505843,
+      "quant_decimals": 0,
+      "calib_n": 59,
+      "calib_agreement": 0.8813559322033898,
+      "calib_mismatch_count": 7,
+      "exact_preserved_on_calib": false,
+      "test_agreement": 0.9190045248868778,
+      "test_mismatch_count": 179,
+      "calib_test_agreement_gap": -0.03764859268348797,
+      "num_pairwise_constraints": 236,
+      "min_pairwise_margin": -0.8625029720855055,
+      "slack_positive_count": 15,
+      "sum_slack": 13.766071562582766,
+      "max_slack": 1.8625029720855055,
+      "selected_C": 100.0,
+      "constraint_version": "multiclass_bias_free_dL_v1",
+      "test_top1_acc": 0.3429864253393665,
+      "test_top5_acc": null,
+      "he_artifact_dir": "he_artifacts_sst5_pool_01",
+      "skip_reason": null
+    },
+    {
+      "key": "pool=05%",
+      "hidden_dim": 256,
+      "pool_fraction": 0.05,
+      "rep_fit_size": 296,
+      "status": "ok",
+      "method_used": "soft(C=100.0)",
+      "hard_feasible": false,
+      "alpha": 0.1320541132020114,
+      "beta": 0.3491583762666891,
+      "eta": 0.12285949017684332,
+      "empirical_margin": -1.5828528769699481,
+      "normalized_margin": -0.08925190891120664,
+      "quant_decimals": 0,
+      "calib_n": 296,
+      "calib_agreement": 0.8817567567567568,
+      "calib_mismatch_count": 35,
+      "exact_preserved_on_calib": false,
+      "test_agreement": 0.918552036199095,
+      "test_mismatch_count": 180,
+      "calib_test_agreement_gap": -0.03679527944233818,
+      "num_pairwise_constraints": 1184,
+      "min_pairwise_margin": -1.5828528769699481,
+      "slack_positive_count": 77,
+      "sum_slack": 73.08277216193515,
+      "max_slack": 2.582852876969948,
+      "selected_C": 100.0,
+      "constraint_version": "multiclass_bias_free_dL_v1",
+      "test_top1_acc": 0.34479638009049773,
+      "test_top5_acc": null,
+      "he_artifact_dir": "he_artifacts_sst5_pool_05",
+      "skip_reason": null
+    },
+    {
+      "key": "pool=10%",
+      "hidden_dim": 256,
+      "pool_fraction": 0.1,
+      "rep_fit_size": 592,
+      "status": "ok",
+      "method_used": "soft(C=100.0)",
+      "hard_feasible": false,
+      "alpha": 0.12710637742975653,
+      "beta": 0.3493391391741841,
+      "eta": 0.12745905764799245,
+      "empirical_margin": -3.2226395851869607,
+      "normalized_margin": -0.1610983200547392,
+      "quant_decimals": 0,
+      "calib_n": 592,
+      "calib_agreement": 0.9307432432432432,
+      "calib_mismatch_count": 41,
+      "exact_preserved_on_calib": false,
+      "test_agreement": 0.9190045248868778,
+      "test_mismatch_count": 179,
+      "calib_test_agreement_gap": 0.011738718356365418,
+      "num_pairwise_constraints": 2368,
+      "min_pairwise_margin": -3.2226395851869607,
+      "slack_positive_count": 108,
+      "sum_slack": 104.92591996373014,
+      "max_slack": 4.222639585186961,
+      "selected_C": 100.0,
+      "constraint_version": "multiclass_bias_free_dL_v1",
+      "test_top1_acc": 0.34660633484162895,
+      "test_top5_acc": null,
+      "he_artifact_dir": "he_artifacts_sst5_pool_10",
+      "skip_reason": null
+    },
+    {
+      "key": "pool=20%",
+      "hidden_dim": 256,
+      "pool_fraction": 0.2,
+      "rep_fit_size": 1185,
+      "status": "ok",
+      "method_used": "soft(C=100.0)",
+      "hard_feasible": false,
+      "alpha": 0.15805511501160827,
+      "beta": 0.39966213638267856,
+      "eta": 0.1361034957086741,
+      "empirical_margin": -4.0949650529660016,
+      "normalized_margin": -0.23440508358617404,
+      "quant_decimals": 0,
+      "calib_n": 1185,
+      "calib_agreement": 0.9172995780590717,
+      "calib_mismatch_count": 98,
+      "exact_preserved_on_calib": false,
+      "test_agreement": 0.918552036199095,
+      "test_mismatch_count": 180,
+      "calib_test_agreement_gap": -0.0012524581400232826,
+      "num_pairwise_constraints": 4740,
+      "min_pairwise_margin": -4.0949650529660016,
+      "slack_positive_count": 242,
+      "sum_slack": 238.4741573179491,
+      "max_slack": 5.0949650529660016,
+      "selected_C": 100.0,
+      "constraint_version": "multiclass_bias_free_dL_v1",
+      "test_top1_acc": 0.34434389140271493,
+      "test_top5_acc": null,
+      "he_artifact_dir": "he_artifacts_sst5_pool_20",
+      "skip_reason": null
+    }
+  ]
+}

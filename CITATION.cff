@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the associated Quad4FHE paper and this software artifact."
+title: "Rethinking ReLU Replacement in MLP Classifiers:From Approximation to Decision-Preserving"
+type: software
+version: "1.0.0"
+date-released: "2026-05-04"
+repository-code: "https://github.com/<OWNER>/<REPOSITORY>"
+license: "GPL-3.0-only"
+authors:
+  - name: "Rui Li, Wenyuan Wu, Weijie Miao"
+abstract: >
+  Code artifact for reproducing plaintext decision-preserving ReLU replacement
+  experiments and CKKS encrypted inference experiments for single-hidden-layer
+  MLP heads.
+keywords:
+  - fully homomorphic encryption
+  - CKKS
+  - ReLU replacement
+  - polynomial activation
+  - decision preservation
+  - encrypted inference
+preferred-citation:
+  type: article
+  title: "Rethinking ReLU Replacement in MLP Classifiers: From Approximation to Decision-Preserving"
+  authors:
+    - name: "Rui Li, Wenyuan Wu, Weijie Miao"
+  year: 2026
+  notes: "Replace this placeholder with the final accepted paper metadata."

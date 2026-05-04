@@ -1,0 +1,5 @@
+pool,method_used,hard_feasible,empirical_margin,norm_margin,quant_decimals,calib_n,calib_agreement,calib_mismatch,exact_preserved,test_agreement,test_mismatch,calib_test_gap,slack_pos,sum_slack,max_slack,constraint_version,he_export_dir
+01%,hard,True,3.543725,3.543725,1,47,1.0,0,True,0.9612159329140462,74,0.03878406708595383,,,,binary_QH_v1,he_artifacts_pool_01
+05%,hard,True,1.553945,1.553945,1,238,1.0,0,True,0.9947589098532494,10,0.00524109014675056,,,,binary_QH_v1,he_artifacts_pool_05
+10%,hard,True,0.933392,0.933392,1,476,1.0,0,True,0.9942348008385744,11,0.005765199161425594,,,,binary_QH_v1,he_artifacts_pool_10
+20%,hard,True,0.345895,0.345895,1,954,1.0,0,True,0.9958071278825996,8,0.004192872117400381,,,,binary_QH_v1,he_artifacts_pool_20
