@@ -1,6 +1,6 @@
 # Quad4FHE Code Artifact
 
-This repository contains the code artifact for **Quad4FHE**, a decision-aware post-training replacement method for ReLU activations in single-hidden-layer MLP heads and encrypted CKKS inference experiments.
+This repository contains the code artifact for **Rethinking ReLU Replacement in MLP Classifiers: From Approximation to Decision-Preserving**, a decision-aware post-training replacement method for ReLU activations in single-hidden-layer MLP heads and encrypted CKKS inference experiments.
 
 The artifact has two main parts:
 
